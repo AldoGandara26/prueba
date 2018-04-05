@@ -1,0 +1,61 @@
+<ion-header  (ngModel)="form1"  > 
+ <!--   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script> -->
+  <ion-navbar id="navbar" >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"> Menu</ion-icon>
+    </button>
+   <h2><ion-title >TREZ</ion-title></h2><ion-icon >  </ion-icon><img src="../assets/imgs/trezg.png" width="100" height="70" id="icono" align="right">
+  
+  </ion-navbar>
+</ion-header>
+      <!--class="card-background-page" id="content"-->
+      <!-- (ngModel)="form1"-->
+    <ion-content  class="{{home.clase+' '+home.estilo}}"  id="content">
+      <!--style="width: 500px; height: 500px;"--> 
+      <ion-slides autoplay="5000" loop="true" speed="3000" >
+    <!--<div  id="slides">  -->
+      <ion-slide id="slide1" *ngFor="let slide of Slider">
+       <!-- <img class="back" src="../assets/imgs/back.png" alt=""> -->
+       <!-- ../assets/imgs/trez9.jpg    src="{{slide.image}}"-->
+       <img  [src]="slide.image"/>
+       <form >
+         <h1 [innerHTML]="slide.title"></h1>
+         <p [innerHTML]="slide.description"></p>
+        <!-- <h1>Trez</h1>
+        <p>Desarrollamos aplicaciones adaptadas a las necesidades de 
+            nuestros clientes.  
+        </p> --></form>
+      </ion-slide> <!--
+      <ion-slide id="slide1" >
+        
+       <img src="../assets/imgs/trez2.png" >
+       <form >
+       <h1>Trez</h1>
+        <p> soporte@trez.com.mx <br>
+          (677)1053166 <br>
+          facebook: Trez Software
+         
+
+        </p></form>
+      </ion-slide>
+     
+      <ion-slide id="slide1">
+         
+       <img src="../assets/imgs/la1.jpg" >
+       <form >
+       <h1>Trez</h1>
+        <p> paginas web y mas  
+        </p></form>
+      </ion-slide> -->
+  <!--  </div> -->
+    
+    </ion-slides>
+
+    <h3> datos desde api</h3>
+    <button ion-item *ngFor="let contact  of contactos"> {{contact.id}}-{{contact.username}}</button>
+    
+  </ion-content>
+  
+
+ 

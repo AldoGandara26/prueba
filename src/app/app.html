@@ -1,0 +1,27 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+  <!--  <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+      <h1><button ion-item ><ion-icon class="centrar" name="home"></ion-icon>Inicio </button></h1>
+      <h1><button ion-item ><ion-icon text-right name="contacts" align="left"></ion-icon>Nosotros</button></h1>
+      <h1><button ion-item (click)="openPage()"><ion-icon  text-right name="call"></ion-icon>Contacto </button></h1>
+    </ion-list> -->
+  <ion-list> 
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list> 
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

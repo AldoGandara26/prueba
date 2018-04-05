@@ -1,0 +1,56 @@
+<!--
+  Generated template for the ContactoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--<link rel="stylesheet" type="text/css" media="screen and  (max-width: 500px)" href="contacto.scss" />
+<meta name="viewport" content="whidth=device-whidth, user-scalable=no , initial-scale=1.0 , maximum-scale=   1.0 , maximum-scale=1.0" >
+--><ion-header>
+ <!-- <link rel="stylesheet" media="(max-width: 480px)" href="contacto.scss" />    ></ion-icon>-->
+
+
+    
+    <ion-navbar>  <ion-title> <ion-icon name="md-arrow-back"  (click)="back()"></ion-icon> Contacto </ion-title>
+  </ion-navbar>
+  <ion-content>
+    <div><ion-input></ion-input></div>
+  </ion-content>
+
+</ion-header>
+ <!-- <ion-iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1578.370103668207!2d-104.65802888577093!3d24.005108196078833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869bb7fe4ca442eb%3A0x981d5dc72938540d!2sTalpa+436%2C+Jalisco%2C+34170+Durango%2C+Dgo.!5e1!3m2!1ses-419!2smx!4v1517882203420" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></ion-iframe>-->
+<ion-content padding  (ngModel)="form1" class="{{aldo.clase+' '+aldo.estilo}}" id="content">
+  <form action="sendForm()" ng-submit="sendForm()" > 
+    <h2>Contáctanos</h2>
+    <!-- -->
+    <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d892.3275332688523!2d-104.657422447279!3d24.004990598746716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869bb7ffb51c94ed%3A0xa01ae373ea7f323c!2sTalpa+420%2C+Jalisco%2C+34170+Durango%2C+Dgo.!5e1!3m2!1ses-419!2smx!4v1518213036177" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <!--class="clase" -->
+   <div >
+     <!-- -->
+    <ion-list id="lista">  
+      <input name="Nombre" type="text" placeholder="Nombre" [(ngModel)]="Nombre"> 
+      <input type="text" name="correo" placeholder="Correo" [(ngModel)]="correo" >
+      <textarea  name="mensaje" placeholder="Escriba aqui su mensaje" [(ngModel)]="textarea"></textarea><br>
+      <button ion-button id="boton" type="submit" (click)="postDatos()" >Enviar</button>
+    </ion-list></div>
+    <!---->
+    <ion-list>
+      <button ion-item *ngFor="let usuario of usuarios ">{{usuario.id}}-{{usuario.name}}</button>
+    </ion-list>
+    
+    
+    </form>
+
+        <ion-list id="iconos" >
+          <ul> <li> <ion-icon name="call" id="telefono">Telefono <br> 6771053166<br> 6778668177  </ion-icon> </li>
+            <li> <ion-icon name="mail" id="email">Correo <br> soporte@trez.com.mx  <br>
+               gandara316@gmail.com</ion-icon> </li>  
+           <li> <ion-icon name="logo-facebook" id="facebook"> Facebook <br> Trez Durango</ion-icon> </li>
+             <li>  <ion-icon name="md-navigate" id="dr"> Direccion <br> Talpa 420 Jalisco 34170 Durango, Dgo. </ion-icon> </li>
+             </ul> </ion-list>  
+    
+ <!-- <sebm-google-map [latitude]="latitud" [longitude]="longitud">
+    
+  </sebm-google-map>-->
+
+</ion-content>
