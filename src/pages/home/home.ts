@@ -7,14 +7,10 @@ import { VariablesProviderProvider } from '../../providers/variables-provider/va
 import { Platform } from 'ionic-angular/platform/platform';
 //import { VariablesProvider } from '../../providers/variables/variables';
 //import { SlideEdgeGesture } from 'ionic-angular/gestures/slide-edge-gesture';
-//import { Slides } from 'ionic-angular';
-
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-
 export class HomePage {
   x = 0;
   y = 0;
@@ -58,12 +54,8 @@ else{
  // this.clase=false; 
   //alert(hoja.clase);
   //alert('weeeb');
-  home.estilo='logo_header_web';
-  
+  home.estilo='logo_header_web'; 
 }
-
-
-
   }
 Slider=[{
   image:'../assets/imgs/trez9.jpg',
@@ -80,23 +72,18 @@ Slider=[{
   title:'Trez',
   description:'Paginas web y mas '
 }];
-
-
   monve() {
-    alert ("esta funcionando");
-    
+    alert ("esta funcionando"); 
     }
-
     ionViewDidLoad(){
       this.proveedor.obtenerDatos()
       .subscribe(
         (data)=>{this.contactos=data;
         console.log("hurra");
         console.log(data[0]);
-        console.log(this.contactos);
-        
-        
+        console.log(this.contactos);   
         },
     (error)=>{console.log(error); }
   )}
 }
+  
