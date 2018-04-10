@@ -1,3 +1,4 @@
+import { LoginPage } from '../login/login';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 //import { ViewChild } from '@angular/core/src/metadata/di';
@@ -16,9 +17,7 @@ export class HomePage {
   y = 0;
   public estilo='';
   form1='';
- ImageArray:any =[];
-
- 
+ ImageArray:any =[]; 
  /* @ViewChild(Slides) slides: Slides;
 
   goToSlide() {
@@ -31,7 +30,6 @@ contactos:any=[];
  /*  this.ImageArray=[{'image': '../assets/imgs/trez9.jpg', 'p':'Estas en la 1'},
    {'image':'../assets/imgs/trez2.png', 'p':'Estas en la 2'},
    {'image':'../assets/imgs/la1.jpg', 'p':'Estas en la 3'}]; /*
-  
  /* if(hoja.clase){
     alert('estas en mobil');
     this.estilo="logo_header_mobile";
@@ -41,6 +39,7 @@ contactos:any=[];
     this.estilo="logo_header_web";
   }
 */
+  
 if(platform.platforms()[0] == 'mobile'){    
   // alert('flag1.1');
 
@@ -85,5 +84,7 @@ Slider=[{
         },
     (error)=>{console.log(error); }
   )}
+  login(){
+    this.navCtrl.push(LoginPage);
 }
-  
+}
