@@ -1,4 +1,3 @@
-import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -16,15 +15,11 @@ import { VariablesProviderProvider } from '../providers/variables-provider/varia
 import { Provedor1Provider } from '../providers/provedor1/provedor1';
 import {HttpClientModule} from '@angular/common/http';
 import { RestProvider } from '../providers/rest/rest';
-import { SignaturePadModule } from 'angular2-signaturepad';
-import { AuthService } from '../providers/auth-service/auth-service';
-
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    LoginPage,
     NosotrosPage,
     ContactoPage
   ],
@@ -42,7 +37,6 @@ import { AuthService } from '../providers/auth-service/auth-service';
     MyApp,
     HomePage,
     ListPage,
-    LoginPage,
     NosotrosPage,
     ContactoPage
   ],
@@ -52,8 +46,7 @@ import { AuthService } from '../providers/auth-service/auth-service';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     VariablesProviderProvider,
     Provedor1Provider,
-    RestProvider,
-    AuthService
+    RestProvider
   ]
 })
 export class AppModule {}

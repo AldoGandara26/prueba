@@ -1,9 +1,7 @@
-import { LoginPage } from '../login/login';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 //import { ViewChild } from '@angular/core/src/metadata/di';
 import {Provedor1Provider} from '../../providers/provedor1/provedor1';
-import { Slides } from 'ionic-angular';
 import { VariablesProviderProvider } from '../../providers/variables-provider/variables-provider';
 import { Platform } from 'ionic-angular/platform/platform';
 //import { VariablesProvider } from '../../providers/variables/variables';
@@ -11,6 +9,7 @@ import { Platform } from 'ionic-angular/platform/platform';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
+  
 })
 export class HomePage {
   x = 0;
@@ -23,7 +22,9 @@ export class HomePage {
   goToSlide() {
     this.slides.slideTo(2, 500);
   }
+  
 */
+
 contactos:any=[];
   constructor(public proveedor: Provedor1Provider, public navCtrl: NavController,  public platform: Platform, public home:VariablesProviderProvider) {
    // alert(hoja.clase);
@@ -85,6 +86,5 @@ Slider=[{
     (error)=>{console.log(error); }
   )}
   login(){
-    this.navCtrl.push(LoginPage);
 }
 }
