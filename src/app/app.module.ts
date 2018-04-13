@@ -15,6 +15,7 @@ import { VariablesProviderProvider } from '../providers/variables-provider/varia
 import { Provedor1Provider } from '../providers/provedor1/provedor1';
 import {HttpClientModule} from '@angular/common/http';
 import { RestProvider } from '../providers/rest/rest';
+
 @NgModule({
   declarations: [
     MyApp,
