@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { LoginPage } from './../login/login';
+import { Component, Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
 //import { ViewChild } from '@angular/core/src/metadata/di';
 import {Provedor1Provider} from '../../providers/provedor1/provedor1';
@@ -6,10 +7,11 @@ import { VariablesProviderProvider } from '../../providers/variables-provider/va
 import { Platform } from 'ionic-angular/platform/platform';
 //import { VariablesProvider } from '../../providers/variables/variables';
 //import { SlideEdgeGesture } from 'ionic-angular/gestures/slide-edge-gesture';
+import { AlertController } from 'ionic-angular';
+import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
-  
 })
 export class HomePage {
   x = 0;
@@ -24,9 +26,10 @@ export class HomePage {
   }
   
 */
-
+LoginPage = "LoginPage";
 contactos:any=[];
-  constructor(public proveedor: Provedor1Provider, public navCtrl: NavController,  public platform: Platform, public home:VariablesProviderProvider) {
+  constructor(public proveedor: Provedor1Provider,public alertCtrl: AlertController, public navCtrl: NavController,  public platform: Platform, public home:VariablesProviderProvider) {
+    
    // alert(hoja.clase);
  /*  this.ImageArray=[{'image': '../assets/imgs/trez9.jpg', 'p':'Estas en la 1'},
    {'image':'../assets/imgs/trez2.png', 'p':'Estas en la 2'},
@@ -40,7 +43,6 @@ contactos:any=[];
     this.estilo="logo_header_web";
   }
 */
-  
 if(platform.platforms()[0] == 'mobile'){    
   // alert('flag1.1');
 
@@ -85,6 +87,4 @@ Slider=[{
         },
     (error)=>{console.log(error); }
   )}
-  login(){
-}
 }
