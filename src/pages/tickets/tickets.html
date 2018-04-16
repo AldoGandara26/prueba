@@ -1,18 +1,63 @@
-<!--
-  Generated template for the TicketsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>tickets</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+    <ion-toolbar color="primary">
+        <ion-buttons start>
+        </ion-buttons>
+        <ion-title>Mis Tickets</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only>
+                <ion-icon name="create"></ion-icon>
+              </button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content padding>
+      <div padding>
+    <ion-toolbar>
+      <ion-buttons start>
+      </ion-buttons>
+      <ion-segment [(ngModel)]="Tickets">
+        <ion-segment-button value="new">Nuevos</ion-segment-button>
+        <ion-segment-button value="wait">Revision</ion-segment-button>
+        <ion-segment-button value="finish">Completados</ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </div>
+  <div [ngSwitch]="Tickets">
+      <ion-list *ngSwitchCase="'new'">
+        <ion-item>
+            <ion-card>
+                <ion-card-header>
+                  Nuevo Ticket
+                </ion-card-header>
+                <ion-card-content>
+                  informacion del nuevo ticket
+                </ion-card-content>
+              </ion-card>
+        </ion-item>
+      </ion-list>
+      <ion-list *ngSwitchCase="'wait'">
+          <ion-item>
+              <ion-card>
+                  <ion-card-header>
+                    Ticket en revision
+                  </ion-card-header>
+                  <ion-card-content>
+                    Estado de la revision del ticket
+                  </ion-card-content>
+                </ion-card>
+          </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'finish'">
+            <ion-item>
+                <ion-card>
+                    <ion-card-header>
+                      Ticket finalizado
+                    </ion-card-header>
+                    <ion-card-content>
+                      Informacion de la terminacion del ticket
+                    </ion-card-content>
+                  </ion-card>
+            </ion-item>
+          </ion-list>
+      </div>
+      </ion-content>
