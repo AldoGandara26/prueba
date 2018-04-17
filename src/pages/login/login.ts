@@ -47,14 +47,18 @@ signup(usuario, contra, ){
     //console.log(elementos.usuario, elementos.contra);
     //console.log(this.user1, this.pass);
     if(elementos.usuario ==this.user1 && elementos.contra == this.pass){
-      alert("Bienvenido");
+      alert("Bienvenido" +this.user1);
       this.navCtrl.setRoot(TicketsPage)
+    }
+    else{
+      alert("usuario o contraseña incorrectos")
     }
     
 
 
   }, error =>{
     console.log("ooops");
+
   });
 
   }
