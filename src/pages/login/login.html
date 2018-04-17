@@ -12,12 +12,12 @@
 <ion-list>
 <ion-item>
 <ion-label floating>Usuario</ion-label>
-<ion-input type="text" #username></ion-input>
+<ion-input type="text" #username [(ngModel)]="user"></ion-input>
 </ion-item>
 
 <ion-item>
     <ion-label floating>Contrasena</ion-label>
-    <ion-input type="password" #password></ion-input>
+    <ion-input type="password" #password [(ngModel)]="pass"></ion-input>
     </ion-item>
 
 

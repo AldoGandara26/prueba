@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { viewClassName } from '@angular/compiler';
+import {Provedor1Provider} from '../../providers/provedor1/provedor1';
 
 /**
  * Generated class for the LoginPage page.
@@ -17,13 +18,24 @@ import { viewClassName } from '@angular/compiler';
 export class LoginPage {
 @ViewChild('username') uname;
 @ViewChild('password') password;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+pass;
+user;
+datos;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor: Provedor1Provider) {
   }
-  SignIn(){
-console.log(this.uname.value, this.password.value);
-  }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
-
+  ionViewDidLoad(){
+    this.proveedor.obtenerDatos()
+    .subscribe(
+      (data)=>{this.datos=data;
+      console.log("hurra");
+     // console.log(data[0]);
+      //console.log(this.contactos);   
+      },
+  (error)=>{console.log(error); }
+)}
+ 
+signup(){
+  let f={user: this.datos.nombre,pass: this.datos.pass };
+  console.log(this.user);
+}
 }
