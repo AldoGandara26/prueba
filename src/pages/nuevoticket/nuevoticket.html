@@ -1,12 +1,47 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>nuevoticket</ion-title>
+    <ion-title>Enviar nuevo ticket</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  
+   
+      
+       <ion-list>
+          <ion-item>
+            <ion-label stacked>Nombre</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Sistema</ion-label>
+            <ion-select [(ngModel)]="sis">
+              <ion-option value="f">Sistema 1</ion-option>
+              <ion-option value="m">Sistema 2</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Tipo</ion-label>
+            <ion-select [(ngModel)]="type">
+              <ion-option value="t1">Tipo1</ion-option>
+              <ion-option value="t2">Tipo2</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <ion-list>
+          <ion-item>
+            <ion-textarea placeholder="Escribe una descripcion"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <label class="item item-input"> <input type="file" id="upimgfile" name="uploadfile" ng-model="orderDetails.uploadfile">
+            </label>
+          </ion-item>
+          <button ion-button full>Enviar
+            <ion-icon name="send"></ion-icon>
+          </button>
+        </ion-list>
+  
 </ion-content>
