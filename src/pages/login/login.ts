@@ -20,7 +20,7 @@ export class LoginPage {
 @ViewChild('username') uname;
 @ViewChild('password') password;
 pass;
-user;
+user1;
 datos;
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor: Provedor1Provider) {
   }
@@ -28,6 +28,7 @@ datos;
     this.proveedor.obtenerDatos()
     .subscribe(
       (data)=>{this.datos=data;
+
       console.log("hurra");
      // console.log(data[0]);
       //console.log(this.contactos);   
@@ -35,17 +36,20 @@ datos;
   (error)=>{console.log(error); }
 )}
  
-signup(){
-  let f={user: this.datos.nombre,password: this.datos.pass };
+signup(usuario, contra, ){
+  //console.log("flag ");
+  console.log(this.datos[0]);
+  let elementos ={usuario: this.datos[0].nombre_usuario, contra: this.datos[0].pass_usuario };
   this.proveedor.obtenerDatos()
   .subscribe(data=>{
-    if(user && pass== user && password){
+    console.log("subscribe");
+    console.log(elementos.usuario, elementos.contra);
+    console.log(this.user1, this.pass);
+    if(elementos.usuario && elementos.contra == this.user1 && this.pass){
       alert("Bienvenido");
       this.navCtrl.setRoot(HomePage)
     }
-    else(){
-      alert("Usuario o contrasena no encontrados");
-    }
+    
 
 
   }, error =>{
