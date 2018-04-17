@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { viewClassName } from '@angular/compiler';
 import {Provedor1Provider} from '../../providers/provedor1/provedor1';
 import { HomePage } from '../home/home';
+import{TicketsPage} from '../tickets/tickets';
 
 /**
  * Generated class for the LoginPage page.
@@ -42,12 +43,12 @@ signup(usuario, contra, ){
   let elementos ={usuario: this.datos[0].nombre_usuario, contra: this.datos[0].pass_usuario };
   this.proveedor.obtenerDatos()
   .subscribe(data=>{
-    console.log("subscribe");
-    console.log(elementos.usuario, elementos.contra);
-    console.log(this.user1, this.pass);
-    if(elementos.usuario && elementos.contra == this.user1 && this.pass){
+    //console.log("subscribe");
+    //console.log(elementos.usuario, elementos.contra);
+    //console.log(this.user1, this.pass);
+    if(elementos.usuario ==this.user1 && elementos.contra == this.pass){
       alert("Bienvenido");
-      this.navCtrl.setRoot(HomePage)
+      this.navCtrl.setRoot(TicketsPage)
     }
     
 

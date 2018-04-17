@@ -15,14 +15,15 @@ import { VariablesProviderProvider } from '../providers/variables-provider/varia
 import { Provedor1Provider } from '../providers/provedor1/provedor1';
 import {HttpClientModule} from '@angular/common/http';
 import { RestProvider } from '../providers/rest/rest';
-
+import {TicketsPage} from '../pages/tickets/tickets';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
     NosotrosPage,
-    ContactoPage
+    ContactoPage,
+    TicketsPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +40,8 @@ import { RestProvider } from '../providers/rest/rest';
     HomePage,
     ListPage,
     NosotrosPage,
-    ContactoPage
+    ContactoPage,
+    TicketsPage
   ],
   providers: [
     StatusBar,
