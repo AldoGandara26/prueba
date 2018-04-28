@@ -8,16 +8,10 @@ import { DragulaService } from 'ng2-dragula/ng2-dragula';
   templateUrl: 'tickets.html',
 })
 export class TicketsPage {
-
   nuevoticketPage= "NuevoticketPage"
-  
   constructor(public navCtrl: NavController, public navParams: NavParams, private dragulaService: DragulaService) {
-    
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad TicketsPage');
   }
-
- 
-
 }
