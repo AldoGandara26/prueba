@@ -4,14 +4,6 @@ import { viewClassName } from '@angular/compiler';
 import {Provedor1Provider} from '../../providers/provedor1/provedor1';
 import { HomePage } from '../home/home';
 import{TicketsPage} from '../tickets/tickets';
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -36,11 +28,10 @@ datos;
       },
   (error)=>{console.log(error); }
 )}
- 
 signup(usuario, contra, ){
   //console.log("flag ");
-  console.log(this.datos[0]);
-  let elementos ={usuario: this.datos[0].nombre_usuario, contra: this.datos[0].pass_usuario };
+  console.log(this.datos[(0)]);
+  let elementos ={usuario: this.datos[(0)].nombre_usuario, contra: this.datos[(0)].pass_usuario };
   this.proveedor.obtenerDatos()
   .subscribe(data=>{
     //console.log("subscribe");
