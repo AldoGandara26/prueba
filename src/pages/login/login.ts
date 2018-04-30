@@ -43,7 +43,7 @@ enviar(){
 });
 }
  
-signup(usuario, contra, ){
+/*signup(usuario, contra, ){
   //console.log("flag ");
  console.log(this.datos[0]);
  let elementos ={usuario: this.datos[0].nombre_usuario, contra: this.datos[0].pass_usuario };
@@ -68,7 +68,7 @@ signup(usuario, contra, ){
 
   });
 
-  }
+} */
 }
 
 
