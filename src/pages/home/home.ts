@@ -77,7 +77,7 @@ Slider=[{
   monve() {
     alert ("esta funcionando"); 
     }
-    ionViewDidLoad(){
+   /* ionViewDidLoad(){
       this.proveedor.obtenerDatos()
       .subscribe(
         (data)=>{this.contactos=data;
@@ -86,5 +86,6 @@ Slider=[{
         console.log(this.contactos);   
         },
     (error)=>{console.log(error); }
-  )}
+  )}*/
+
 }

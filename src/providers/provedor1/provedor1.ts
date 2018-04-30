@@ -14,6 +14,7 @@ import { HttpHeaders } from '@angular/common/http';
 export class Provedor1Provider {
  // private url = 'http//localhost:8000/users';
  api="http://localhost:3000/users";
+ apiu="http://localhost:3000/api/users/login";
   constructor(public http: HttpClient) {
     console.log('Hello Provedor1Provider Provider');
   }
@@ -24,12 +25,34 @@ obtenerDatos()
 /*agregarDatos(){
   return this.http.post('http://localhost:3000/users' );
 } */
-callPost(nombre, correo, textarea){
+/*callPost(nombre, correo, textarea){
 console.log("Name= "+nombre+"Correo= "+ correo);
 let param = {name: nombre, email:correo, textarea: textarea};
 let url ="http://localhost:3000/users";
 let request=this.http.post(url, param);
 return request.toPromise();
+}*/
+enviardatos(datos){
+  let consulta =this.api;
+  let headerOptions:any={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    
+  };
+  const respuesta =this.http.post( consulta,datos,  headerOptions,);
+  return respuesta;
+}
+post(datos){
+  let consulta =this.api;
+  let headerOptions:any={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    
+  };
+  const respuesta =this.http.post( consulta,datos,  headerOptions,);
+  return respuesta;
 }
 /*agregarDatos(){
   let url ='${this.url}/${id}';
