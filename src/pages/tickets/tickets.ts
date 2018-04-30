@@ -1,7 +1,7 @@
 import { NuevoticketPage } from './../nuevoticket/nuevoticket';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DragulaService } from 'ng2-dragula/ng2-dragula';
+//import { DragulaService } from 'ng2-dragula/ng2-dragula';
 @IonicPage()
 @Component({
   selector: 'page-tickets',
@@ -9,7 +9,7 @@ import { DragulaService } from 'ng2-dragula/ng2-dragula';
 })
 export class TicketsPage {
   nuevoticketPage= "NuevoticketPage"
-  constructor(public navCtrl: NavController, public navParams: NavParams, private dragulaService: DragulaService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad TicketsPage');
