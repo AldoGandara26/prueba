@@ -27,7 +27,6 @@ datos;
       //console.log(this.contactos);   
       },
   (error)=>{console.log(error); }
-<<<<<<< HEAD
 )}  */
 enviar(){
   let datos= {"nombre_usuario": this.user1, "pass_usuario": this.pass}
@@ -49,13 +48,6 @@ signup(usuario, contra, ){
  console.log(this.datos[0]);
  let elementos ={usuario: this.datos[0].nombre_usuario, contra: this.datos[0].pass_usuario };
 
-=======
-)}
-signup(usuario, contra, ){
-  //console.log("flag ");
-  console.log(this.datos[(0)]);
-  let elementos ={usuario: this.datos[(0)].nombre_usuario, contra: this.datos[(0)].pass_usuario };
->>>>>>> d328f96437b001f5cf0a32dca299b13d7e45a309
   this.proveedor.obtenerDatos()
   .subscribe(data=>{
     //console.log("subscribe");
