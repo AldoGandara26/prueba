@@ -12,23 +12,28 @@ module.exports=function (app){
 	});
 
 	app.post('/users', (req, res) => {
-console.log(req.body);
+//console.log('jalando')
+//console.log('4');
+//console.log(req.body.nombre_usuario);
 	const userData={
+
 			id: null,
-			Nombre:req.body.Nombre,
-			correo:req.body.correo,
-			textarea:req.body.textarea
+			nombre: req.body.nombre_usuario,
+			pass: req.body.pass_usuario,
+			//textarea:req.body.textarea
 			//created_at:null,
 			//updated_at:null
 
 		}
-		 
-		User.insertUser(userData, (err, data)=>{
-			if (data && data.insertId ) {
-				console.log(data);
+		//console.log(userData);
+		 //console.log('estas aqui mor');
+		User.getUsers(userData, (err, data)=>{
+			//console.log('3');
+			if (data ) {
+				//console.log(data, userData);
 				res.json({
 					success:true, 
-					msg: 'usuario insertado',
+					msg: 'usuario Eencontrado',
 					data: data
 				})
 			} else{
