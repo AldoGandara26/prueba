@@ -16,6 +16,7 @@ import { Provedor1Provider } from '../providers/provedor1/provedor1';
 import {HttpClientModule} from '@angular/common/http';
 import { RestProvider } from '../providers/rest/rest';
 import {TicketsPage} from '../pages/tickets/tickets';
+import { DragulaModule } from 'ng2-dragula';
 @NgModule({
   declarations: [
     MyApp,
@@ -28,6 +29,7 @@ import {TicketsPage} from '../pages/tickets/tickets';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    DragulaModule,
    // AgmCoreModule.forRoot({
      // apiKey: 'AIzaSyCH_Jt8GvORX8ZnMprgqlj95zW6upzj1Lw'
     ////})

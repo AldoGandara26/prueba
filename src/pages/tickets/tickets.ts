@@ -1,25 +1,17 @@
+import { NuevoticketPage } from './../nuevoticket/nuevoticket';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the TicketsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+import { DragulaService } from 'ng2-dragula/ng2-dragula';
 @IonicPage()
 @Component({
   selector: 'page-tickets',
   templateUrl: 'tickets.html',
 })
 export class TicketsPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  nuevoticketPage= "NuevoticketPage"
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dragulaService: DragulaService) {
   }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad TicketsPage');
   }
-
 }

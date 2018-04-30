@@ -1,16 +1,9 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title>Enviar nuevo ticket</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content padding>
-  
-   
-      
        <ion-list>
           <ion-item>
             <ion-label stacked>Nombre</ion-label>
@@ -36,12 +29,19 @@
             <ion-textarea placeholder="Escribe una descripcion"></ion-textarea>
           </ion-item>
           <ion-item>
-            <label class="item item-input"> <input type="file" id="upimgfile" name="uploadfile" ng-model="orderDetails.uploadfile">
+            <label class="item item-input"> <input type="file" id="upimgfile_descripcion" name="uploadfile" ng-model="orderDetails.uploadfile">
             </label>
           </ion-item>
-          <button ion-button full>Enviar
-            <ion-icon name="send"></ion-icon>
+          <ion-item>
+              <ion-textarea placeholder="Escribe un comentario (opcional)"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <label class="item item-input"> <input type="file" id="upimgfile_comment" name="uploadfile" ng-model="orderDetails.uploadfile">
+              </label>
+            </ion-item>
+          <div class="centrado">
+          <button ion-button small><ion-icon name="send">Enviar</ion-icon>
           </button>
+        </div>
         </ion-list>
-  
 </ion-content>
