@@ -14,6 +14,7 @@ import { HttpHeaders } from '@angular/common/http';
 export class Provedor1Provider {
  // private url = 'http//localhost:8000/users';
  api="http://localhost:3000/users";
+ api1="http://localhost:3000/insert";
  apiu="http://localhost:3000/api/users/login";
   constructor(public http: HttpClient) {
     console.log('Hello Provedor1Provider Provider');
@@ -44,6 +45,17 @@ enviardatos(datos){
   return respuesta;
 }
 post(datos){
+  let consulta =this.api1;
+  let headerOptions:any={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    
+  };
+  const respuesta =this.http.post( consulta,datos,  headerOptions,);
+  return respuesta;
+}
+insertar(datos){
   let consulta =this.api;
   let headerOptions:any={
     headers: new HttpHeaders({

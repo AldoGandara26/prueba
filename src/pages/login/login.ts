@@ -28,15 +28,23 @@ datos;
       },
   (error)=>{console.log(error); }
 )}  */
+tickets(){
+  this.navCtrl.setRoot(TicketsPage)  ;
+
+}
 enviar(){
   let datos= {"nombre_usuario": this.user1, "pass_usuario": this.pass}
-  console.log(this.user1, this.pass);
-  let resultado_registro:any=this.proveedor.post(datos);
+  //console.log(this.user1, this.pass);
+  let resultado_registro:any=this.proveedor.enviardatos(datos);
  resultado_registro.subscribe(data=>{
-  console.log("correcto");
-  alert("Sus datos se han enviado a soporte Trez");
-  this.navCtrl.setRoot(HomePage)
+console.log(data);
+if(data==true){
+  console.log("estas dentro");
 
+}
+else{
+  console.log("estas fuera");
+}
 
 }, error =>{
   console.log("ooops");

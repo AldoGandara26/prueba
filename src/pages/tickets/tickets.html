@@ -17,7 +17,7 @@
       <ion-buttons start>
       </ion-buttons>
       <ion-segment [(ngModel)]="Tickets">
-        <ion-segment-button value="new">Nuevos</ion-segment-button>
+        <ion-segment-button value="new" (click)="nuevos()" >Nuevos</ion-segment-button>
         <ion-segment-button value="wait">Revision</ion-segment-button>
         <ion-segment-button value="finish">Completados</ion-segment-button>
       </ion-segment>
@@ -27,12 +27,22 @@
       <ion-list *ngSwitchCase="'new'">
         <ion-item>
             <ion-card>
-                <ion-card-header>
+                <ion-card-header *ngFor="let aldo of datos">
                   Nuevo Ticket
                 </ion-card-header>
-                <ion-card-content>
+                <ion-card-content  (ngModel)="form1" >
                   informacion del nuevo ticket
-                </ion-card-content>
+                <!-- *ngFor="let datoshtml  of datos" -->
+                <!-- {{datoshtml.descripcion_ticket}}  -->
+                </ion-card-content >
+                <ion-item *ngFor='let aldo of datos'>
+                 <h2 >Nombre: {{aldo.nombre_ticket}} </h2> 
+                 <h2>Descripcion:{{aldo.descripcion_ticket}}</h2>
+                 <h2>Estatus:{{aldo.estatus_ticket}}</h2>
+                </ion-item>
+                <ion-list   >
+                 
+               </ion-list>
               </ion-card>
         </ion-item>
       </ion-list>
