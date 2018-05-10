@@ -2,7 +2,6 @@ import { NuevoticketPage } from './../nuevoticket/nuevoticket';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import{Provedor1Provider} from '../../providers/provedor1/provedor1';
-//import { DragulaService } from 'ng2-dragula/ng2-dragula';
 @IonicPage()
 @Component({
   selector: 'page-tickets',
