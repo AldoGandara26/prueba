@@ -7,39 +7,42 @@
        <ion-list>
           <ion-item>
             <ion-label stacked>Nombre</ion-label>
-            <ion-input type="text"  [(ngModel)]="nombre" ></ion-input>
+            <ion-input type="text"  [(ngModel)]="name" ></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>Sistema</ion-label>
-            <ion-select [(ngModel)]="sis">
-              <ion-option value="f">Sistema 1</ion-option>
-              <ion-option value="m">Sistema 2</ion-option>
+            <ion-select [(ngModel)]="system">
+              <ion-option value="s1">Sistema 1</ion-option>
+              <ion-option value="s2">Sistema 2</ion-option>
+              <ion-option value="s3">Sistema 3</ion-option>
             </ion-select>
           </ion-item>
           <ion-item>
-            <ion-label>Tipo</ion-label>
+            <ion-label>Tipo de ticket</ion-label>
             <ion-select [(ngModel)]="type">
-              <ion-option value="t1">Tipo1</ion-option>
-              <ion-option value="t2">Tipo2</ion-option>
+              <ion-option value="t1">Actualizacion</ion-option>,
+              <ion-option value="t2">Error Interfaz</ion-option>,
+              <ion-option value="t3">Error Sistema</ion-option>,
+              <ion-option value="t4">Otro</ion-option>
             </ion-select>
           </ion-item>
         </ion-list>
         <ion-list>
           <ion-item>
-            <ion-textarea placeholder="Escribe una descripcion"  [(ngModel)]="descripcion" ></ion-textarea>
+            <ion-textarea placeholder="Escribe una descripcion"  [(ngModel)]="description"></ion-textarea>
           </ion-item>
           <ion-item>
             <label class="item item-input"> <input type="file"  [(ngModel)]="file" id="upimgfile_descripcion" name="uploadfile" ng-model="orderDetails.uploadfile">
             </label>
           </ion-item>
           <ion-item>
-              <ion-textarea placeholder="Escribe un comentario (opcional)"  [(ngModel)]="comentario" ></ion-textarea>
+              <ion-textarea placeholder="Escribe un comentario (opcional)"  [(ngModel)]="comment" maxlength="800"></ion-textarea>
             </ion-item>
             <ion-item>
               <label class="item item-input"> <input type="file"  [(ngModel)]="file2" id="upimgfile_comment" name="uploadfile" ng-model="orderDetails.uploadfile">
               </label>
             </ion-item>
-          <div class="centrado">
+          <div class="bnt_send">
           <button ion-button small (click)="insert()"><ion-icon name="send">Enviar</ion-icon>
           </button>
         </div>
