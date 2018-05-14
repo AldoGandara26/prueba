@@ -39,7 +39,7 @@ userModel.getUsers=(userData, callback)=>{
 					//console.log(rows);
 
 
-					callback(null, rows);
+					(callback)(null, rows);
 				}
 			})
 	}
@@ -56,7 +56,7 @@ userModel.insertUser = (userData, callback)=>{
 				if (err) {
 					throw err;
 				} else{
-					callback(null,
+					(callback)(null,
 					 {'insertId': result.insertId})
 				}
 			})
