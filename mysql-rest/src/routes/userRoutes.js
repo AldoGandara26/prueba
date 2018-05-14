@@ -33,7 +33,7 @@ module.exports=function (app){
 				//console.log(data, userData);
 				res.json({
 					success:true, 
-					msg: 'usuario Encontrado',
+					msg: 'usuario Eencontrado',
 					data: data
 				})
 			} else{
