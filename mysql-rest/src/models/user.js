@@ -66,21 +66,11 @@ userModel.h = function (userData,callback)
 							}
 						}
 					}
-<<<<<<< HEAD
-=======
-
-
-					//console.log(rows);
-
-
-					(callback)(null, rows);
->>>>>>> caf18e9342dd4924afd4e63057055b73f8f502a8
 				}
 			})
 	}
 	
 };
-<<<<<<< HEAD
 //funcion para insertar nuevos tickets
 userModel.b = function (insertData,callback)
 {
@@ -101,21 +91,6 @@ userModel.b = function (insertData,callback)
 					return callback(null,"correcto");
 					//callback(null,
 					//{'insertId': result.insertId})
-=======
-
-userModel.insertUser = (userData, callback)=>{
-	console.log('ESTE E USER DATA')
-		console.log(userData)
-	if (connection) {
-		connection.query(
-			'INSERT INTO usuers SET ?', userData,
-			(err,result)=>{
-				if (err) {
-					throw err;
-				} else{
-					(callback)(null,
-					 {'insertId': result.insertId})
->>>>>>> caf18e9342dd4924afd4e63057055b73f8f502a8
 				}
 			})
 	};

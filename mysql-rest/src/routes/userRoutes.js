@@ -19,7 +19,6 @@ module.exports=function (app)
 			nombre: req.body.nombre_usuario,
 			pass:  req.body.pass_usuario			
 		}
-<<<<<<< HEAD
 		User.h(userData, function(err,us)
 		{
 		 console.log(us);
@@ -63,29 +62,6 @@ module.exports=function (app)
 
 		});
 
-=======
-		//console.log(userData);
-		 //console.log('estas aqui mor');
-		User.getUsers(userData, (err, data)=>{
-			//console.log('3');
-			if (data ) {
-				//console.log(data, userData);
-				res.json({
-					success:true, 
-					msg: 'usuario Encontrado',
-					data: data
-				})
-			} else{
-				res.status(500).json({
-					success:false,
-					msg:'error',
-					msg: userData
-				})
-			}
-
-
-		})
->>>>>>> caf18e9342dd4924afd4e63057055b73f8f502a8
 	}); 
 
 	app.post('/insert', (req, res) => 
