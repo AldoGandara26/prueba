@@ -28,6 +28,7 @@ insert(){
   //console.log(this.user1, this.pass);
   let resultado_registro:any=this.proveedor.post(datos);
  resultado_registro.subscribe(data=>{
+   
   console.log(data);
   alert("Sus ticket se ha enviado a TREZ");
   //this.navCtrl.setRoot(HomePage)

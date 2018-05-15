@@ -4,6 +4,7 @@ import { viewClassName } from '@angular/compiler';
 import {Provedor1Provider} from '../../providers/provedor1/provedor1';
 import { HomePage } from '../home/home';
 import{TicketsPage} from '../tickets/tickets';
+import {TicketsadmnPage} from '../ticketsadmn/ticketsadmn';
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -29,7 +30,7 @@ datos;
   (error)=>{console.log(error); }
 )}  */
 tickets(){
-  this.navCtrl.setRoot(TicketsPage)  ;
+  this.navCtrl.setRoot(TicketsadmnPage) ;
 
 }
 enviar(){
