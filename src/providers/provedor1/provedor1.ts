@@ -23,6 +23,11 @@ obtenerDatos()
 {
   return this.http.get('http://localhost:3000/users');
 }
+revisados()
+{
+  return this.http.get('http://localhost:3000/revisados');
+}
+
 /*agregarDatos(){
   return this.http.post('http://localhost:3000/users' );
 } */

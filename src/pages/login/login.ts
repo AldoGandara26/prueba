@@ -51,7 +51,10 @@ else{
     if(data.respuesta=="correcto"){console.log("de tipo 0")}
     else{
       if(data.respuesta=="correcto1")
-      {console.log("de tipo 1");}
+      {console.log("de tipo 1");
+      alert("usuario y contrasena corectos");
+      this.navCtrl.setRoot(TicketsPage);
+    }
    // console.log("allgoa anda mal");
     }
   }

@@ -26,6 +26,23 @@ userModel.a =function (callback)
 				}})	
 			}	
 	};
+	userModel.r =function (callback)
+	{		
+		if (connection)
+			{
+				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en_revison'",
+				(err, rows) =>
+				{
+				if (err)
+				 {
+					throw err;
+				} else {
+					console.log("estamos aqui");
+					return callback(null, rows);
+				}})	
+			}	
+	};
 	//funcion para el login
 userModel.h = function (userData,callback)
 {

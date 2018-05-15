@@ -11,6 +11,25 @@ module.exports=function (app)
 		});
 	});
 
+
+app.get('/revisados', (req,res)=>
+	{
+		User.r((err, data)=>
+		{
+			res.status(200).json(data);
+
+		});
+	});
+
+
+
+
+
+
+
+
+
+
 	app.post('/users', (req, res) => 
 	{
 		const userData=
