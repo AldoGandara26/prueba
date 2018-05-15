@@ -18,15 +18,15 @@
 <ion-toolbar>
   <ion-buttons start>
   </ion-buttons>
-  <ion-segment [(ngModel)]="Tickets">
-    <ion-segment-button value="new" (click)="nuevos()" >Nuevos</ion-segment-button>
-    <ion-segment-button value="wait">En Revision</ion-segment-button>
-    <ion-segment-button value="Reviewed">Revisados</ion-segment-button>
-    <ion-segment-button value="finish">Completos</ion-segment-button>
+  <ion-segment [(ngModel)]="ticketsadmn">
+    <ion-segment-button value="newadmn" (click)="nuevos()" >Nuevos</ion-segment-button>
+    <ion-segment-button value="waitadmn">En Revision</ion-segment-button>
+    <ion-segment-button value="Reviewedadmn">Revisados</ion-segment-button>
+    <ion-segment-button value="finishadmn">Completos</ion-segment-button>
   </ion-segment>
 </ion-toolbar>
 </div>
-<div [ngSwitch]="Tickets">
+<div [ngSwitch]="ticketsadmn">
   <ion-list *ngSwitchCase="'new'">
     <ion-item>
         <ion-card>
