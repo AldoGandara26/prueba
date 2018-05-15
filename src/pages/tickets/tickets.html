@@ -17,9 +17,9 @@
       <ion-buttons start>
       </ion-buttons>
       <ion-segment [(ngModel)]="Tickets">
-        <ion-segment-button value="new" (click)="nuevos()" >Nuevos</ion-segment-button>
-        <ion-segment-button value="wait">En Revision</ion-segment-button>
-        <ion-segment-button value="Reviewed">Revisados</ion-segment-button>
+        <ion-segment-button value="new"  >Nuevos</ion-segment-button>
+        <ion-segment-button value="wait" (click)="en_revision()">En Revision</ion-segment-button>
+        <ion-segment-button value="Reviewed" (click)="revisados()">Revisados</ion-segment-button>
         <ion-segment-button value="finish">Completos</ion-segment-button>
       </ion-segment>
     </ion-toolbar>
@@ -28,7 +28,7 @@
       <ion-list *ngSwitchCase="'new'">
         <ion-item>
             <ion-card>
-                <ion-card-header *ngFor="let aldo of datos">
+                <ion-card-header >
                   Nuevo Ticket
                 </ion-card-header>
                 <ion-card-content  (ngModel)="form1" >
@@ -36,10 +36,8 @@
                 <!-- *ngFor="let datoshtml  of datos" -->
                 <!-- {{datoshtml.descripcion_ticket}}  -->
                 </ion-card-content >
-                <ion-item *ngFor='let aldo of datos'>
-                 <h2 >Nombre: {{aldo.nombre_ticket}} </h2> 
-                 <h2>Descripcion:{{aldo.descripcion_ticket}}</h2>
-                 <h2>Estatus:{{aldo.estatus_ticket}}</h2>
+                <ion-item>
+                 
                 </ion-item>
                 <ion-list   >
                  
@@ -56,9 +54,32 @@
                   <ion-card-content>
                     Estado de la revision del ticket
                   </ion-card-content>
+                 <ion-item *ngFor="let aldo  of datos">  
+                   <h2 >Nombre: {{aldo.nombre_ticket}} </h2> 
+                 <h2>Descripcion:{{aldo.descripcion_ticket}}</h2>
+                 <h2>Estatus:{{aldo.estatus_ticket}}</h2>
+                </ion-item>
+
                 </ion-card>
           </ion-item>
         </ion-list>
+        <ion-list *ngSwitchCase="'Reviewed'">
+            <ion-item>
+                <ion-card>
+                    <ion-card-header>
+                      Ticket revisado y aprobado
+                    </ion-card-header>
+                    <ion-card-content>
+                      Informacion del ticket
+                    </ion-card-content>
+                    <ion-item *ngFor="let rev  of datos_revisados">  
+                        <h2 >Nombre: {{rev.nombre_ticket}} </h2> 
+                      <h2>Descripcion:{{rev.descripcion_ticket}}</h2>
+                      <h2>Estatus:{{rev.estatus_ticket}}</h2>
+                     </ion-item>
+                  </ion-card>
+            </ion-item>
+          </ion-list>
         <ion-list *ngSwitchCase="'finish'">
             <ion-item>
                 <ion-card>
