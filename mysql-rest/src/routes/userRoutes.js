@@ -25,21 +25,25 @@ module.exports=function (app)
 
 		 if(us =="indefinido")
 		 {
-		 	res.send("indefinido");
+		 	res.send(JSON.stringify({respuesta: "indefinido" }));
 
 		 }
 		 else{
 		 	if (us =="nocoinciden"){
-		 	res.send(JSON.stringify({a: "nocoinciden" }));
+		 	res.send(JSON.stringify({respuesta: "nocoinciden" }));
 		 		console.log("no");
 
 		 	}
 		 	else{
 		 		if(us=="correcto"){
-		 			res.send(true);
+		 				res.send(JSON.stringify({respuesta: "correcto" }));
 		 		}
 		 		else{
-		 			res.send("mal");
+		 			if(us=="correcto1"){
+
+		 					res.send(JSON.stringify({respuesta: "correcto1" }));
+		 			}
+		 			//res.send("mal");
 		 		}
 		 	}
 		 }

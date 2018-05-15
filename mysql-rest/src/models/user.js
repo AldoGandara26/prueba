@@ -56,8 +56,23 @@ userModel.h = function (userData,callback)
 						else
 						{
 							if ( rows[0].pass_usuario == userData.pass) 
-							{
-								return callback(null,'correcto');					
+							{ 
+								if(rows[0].tipo=="1"){
+									console.log("estoy aqui");
+
+									return callback(null,"correcto1");
+								}
+								else{
+									return callback(null,"correcto");
+								}
+								
+
+								
+
+
+								//return callback(null,"correcto");
+
+													
 							}
 							else
 							{ 

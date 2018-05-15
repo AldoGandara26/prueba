@@ -37,13 +37,25 @@ enviar(){
   //console.log(this.user1, this.pass);
   let resultado_registro:any=this.proveedor.enviardatos(datos);
  resultado_registro.subscribe(data=>{
-console.log(data);
-if(data==true){
-  console.log("estas dentro");
+//console.log(data.respuesta);
+if(data.respuesta =="indefinido"){
+  console.log("no se encuentra el ususario");
 
 }
 else{
-  console.log("estas fuera");
+  if(data.respuesta=="nocoinciden"){
+    console.log("el usuario y la contra no coinciden");
+    
+  }
+  else{
+    if(data.respuesta=="correcto"){console.log("de tipo 0")}
+    else{
+      if(data.respuesta=="correcto1")
+      {console.log("de tipo 1");}
+   // console.log("allgoa anda mal");
+    }
+  }
+  
 }
 
 }, error =>{
