@@ -4,7 +4,7 @@ module.exports=function (app)
 {
 	app.get('/users', (req,res)=>
 	{
-		User.a((err, data)=>
+		User.revision((err, data)=>
 		{
 			res.status(200).json(data);
 
@@ -14,7 +14,7 @@ module.exports=function (app)
 
 app.get('/revisados', (req,res)=>
 	{
-		User.r((err, data)=>
+		User.aceptados((err, data)=>
 		{
 			res.status(200).json(data);
 
@@ -23,7 +23,7 @@ app.get('/revisados', (req,res)=>
 
 app.get('/nuevos', (req,res)=>
 	{
-		User.n((err, data)=>
+		User.nuevos((err, data)=>
 		{
 			res.status(200).json(data);
 
@@ -55,7 +55,7 @@ app.get('/completos', (req,res)=>
 			nombre: req.body.nombre_usuario,
 			pass:  req.body.pass_usuario			
 		}
-		User.h(userData, function(err,us)
+		User.login(userData, function(err,us)
 		{
 		 console.log(us);
 
@@ -123,10 +123,10 @@ app.get('/completos', (req,res)=>
 			estatus_ticket:"en revison",
 			precio:"380"
 		}
-			console.log(insertData);
+			//console.log(insertData);
 			User.b(insertData, function(err,us)
 			{
-        		console.log("---->"+us);
+        		//console.log("---->"+us);
 			});
 	});
 
@@ -142,7 +142,7 @@ app.get('/completos', (req,res)=>
 			id1:req.body.id1
 		}
 			//console.log(insertData);
-			User.l(updatedData, function(err,us)
+			User.cambiop(updatedData, function(err,us)
 			{
         		console.log("---->"+us);
 			});
@@ -159,7 +159,7 @@ app.get('/completos', (req,res)=>
 			id1:req.body.id1
 		}
 			//console.log(insertData);
-			User.o(updatedData2, function(err,us)
+			User.cambior(updatedData2, function(err,us)
 			{
         		console.log("---->"+us);
 			});

@@ -9,7 +9,7 @@ connection=mysql.createConnection({
 
 let userModel={};
 //funcion para mostrar tickets
-userModel.a =function (callback)
+userModel.revision =function (callback)
 	{		
 		if (connection)
 			{
@@ -26,7 +26,7 @@ userModel.a =function (callback)
 				}})	
 			}	
 	};
-	userModel.n =function (callback)
+	userModel.nuevos =function (callback)
 	{		
 		if (connection)
 			{
@@ -43,7 +43,7 @@ userModel.a =function (callback)
 				}})	
 			}	
 	};
-	userModel.r =function (callback)
+	userModel.aceptados =function (callback)
 	{		
 		if (connection)
 			{
@@ -55,7 +55,7 @@ userModel.a =function (callback)
 				 {
 					throw err;
 				} else {
-					console.log(rows);
+					//console.log(rows);
 					return callback(null, rows);
 				}})	
 			}	
@@ -78,7 +78,7 @@ userModel.a =function (callback)
 			}	
 	};
 	//funcion para el login
-userModel.h = function (userData,callback)
+userModel.login = function (userData,callback)
 {
 	if (connection)
 	{	
@@ -161,7 +161,7 @@ userModel.b = function (insertData,callback)
 			})
 	};
 };
-userModel.l = function (updatedData,callback)
+userModel.cambiop = function (updatedData,callback)
 {
 	console.log(updatedData);
 	if (connection)
@@ -185,7 +185,7 @@ userModel.l = function (updatedData,callback)
 			})
 	};
 };
-userModel.o = function (updatedData2,callback)
+userModel.cambior = function (updatedData2,callback)
 {
 	//console.log(updatedData);
 	if (connection)
