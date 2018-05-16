@@ -129,6 +129,7 @@ userModel.b = function (insertData,callback)
 };
 userModel.l = function (updatedData,callback)
 {
+	console.log(updatedData);
 	if (connection)
 	{
 			connection.query("UPDATE tickets SET  precio='+updatedData.precio+', estatus_ticket='"+updatedData.aceptado+"' WHERE id='"+updatedData.id1+"';",
