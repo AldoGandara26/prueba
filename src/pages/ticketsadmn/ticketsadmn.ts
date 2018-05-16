@@ -11,12 +11,15 @@ import { AlertController } from 'ionic-angular';
 export class TicketsadmnPage {
   nuevoticketPage= "NuevoticketPage"
   datos:any=[0];
+  datos2:any=[0];
   datos1:any=[0];
   //precio;
   nuevosd:any=[0];
   input;
+  input2;
   //form1='';
   objeto;
+  objeto2;
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor: Provedor1Provider, public alertCtrl: AlertController  ) {
   }
   ionViewDidLoad() {
@@ -59,6 +62,42 @@ export class TicketsadmnPage {
       prompt.present();
       
     }
+    doPrompt2(object) {
+      // console.log(obj);
+         let prompt = this.alertCtrl.create({
+         title: 'Login',
+         message: "Enter a name for this new album you're so keen on adding",
+         inputs: [
+           {
+             name: 'title',
+             placeholder: 'Title',
+            
+                     },
+         ],
+         buttons: [
+           {
+             text: 'Cancel',
+             handler: data => {
+               console.log('Cancel clicked');
+             }
+           },
+           {
+             text: 'Save',
+             handler: data => {
+             // console.log(obj);
+             this.input2=data.title;
+            // console.log(JSON.stringify(data));
+            this.objeto2=object;
+               this.cambiorevisado();
+               console.log('Saved clicked');
+             
+             }
+           }
+         ]
+       });
+       prompt.present();
+       
+     }
     en_revision(){
       this.proveedor.revisados()
       .subscribe(
@@ -105,6 +144,23 @@ export class TicketsadmnPage {
  }, error =>{
     console.log("ooops");
   });
+  }
+  cambiorevisado(){
+    console.log("----------->"+this.objeto2.id);
+    let datos= {"comentario": this.input2, "id1":this.objeto2.id}
+    //console.log(this.user1, this.pass);
+    let resultado_registro:any=this.proveedor.cambiorevisado(datos);
+   resultado_registro.subscribe(data=>{
+     
+   // console.log(data);
+   // alert("Sus ticket se ha enviado a TREZ");
+    //this.navCtrl.setRoot(HomePage)
+  
+  
+ }, error =>{
+    console.log("ooops");
+  });
+
   }
   }
 

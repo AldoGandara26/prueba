@@ -123,6 +123,7 @@ app.get('/nuevos', (req,res)=>
 
 	app.post('/cambio', (req, res) => 
 	{
+
 		const updatedData=
 		{
 			
@@ -133,6 +134,23 @@ app.get('/nuevos', (req,res)=>
 		}
 			//console.log(insertData);
 			User.l(updatedData, function(err,us)
+			{
+        		console.log("---->"+us);
+			});
+	});
+
+	app.post('/cambiorevisado', (req, res) => 
+	{
+		const updatedData2=
+		{
+			
+			comentario:req.body.comentario,
+			
+			estatus:"terminado",
+			id1:req.body.id1
+		}
+			//console.log(insertData);
+			User.o(updatedData2, function(err,us)
 			{
         		console.log("---->"+us);
 			});

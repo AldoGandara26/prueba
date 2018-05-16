@@ -168,6 +168,30 @@ userModel.l = function (updatedData,callback)
 			})
 	};
 };
+userModel.o = function (updatedData2,callback)
+{
+	//console.log(updatedData);
+	if (connection)
+	{
+			connection.query("UPDATE tickets SET  comentario_id='"+updatedData2.comentario+"', estatus_ticket='"+updatedData2.estatus+"' WHERE id='"+updatedData2.id1+"';",
+			(err,result)=>
+			{
+				if (err)
+				{
+					console.log(err);
+					//throw err;
+					return callback(null,"error");
+				} 
+				else
+				{
+					//console.log("estamos cerca");
+					return callback(null,"correcto");
+					//callback(null,
+					//{'insertId': result.insertId})
+				}
+			})
+	};
+};
 
 
 module.exports = userModel;

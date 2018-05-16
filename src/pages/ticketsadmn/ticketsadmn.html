@@ -39,7 +39,7 @@
                 <h2 >Nombre: {{new.nombre_ticket}} </h2> 
                 <h2>Descripcion:{{new.descripcion_ticket}}</h2>
                 <h2>Estatus:{{new.estatus_ticket}}</h2>
-                <button ion-button color="secondary" block (click)="doPrompt(aldo)">Show Prompt Alert</button>
+                <button ion-button color="secondary" block (click)="doPrompt(new)">Show Prompt Alert</button>
                </ion-item>
             <!-- *ngFor="let datoshtml  of datos" -->
             <!-- {{datoshtml.descripcion_ticket}}  -->
@@ -76,7 +76,7 @@
                 <h2 >Nombre: {{aldo.nombre_ticket}} </h2> 
                 <h2>Descripcion:{{aldo.descripcion_ticket}}</h2>
                 <h2>Estatus:{{aldo.estatus_ticket}}</h2>
-                <button ion-button color="secondary" block (click)="doPrompt(aldo)">Show Prompt Alert</button>
+                <button ion-button color="secondary" block (click)="doPrompt2(aldo)">Show Prompt Alert</button>
                </ion-item>
             </ion-card>
       </ion-item>
