@@ -11,6 +11,7 @@ import { AlertController } from 'ionic-angular';
 export class TicketsadmnPage {
   nuevoticketPage= "NuevoticketPage"
   datos:any=[0];
+  otros:any=[0];
   datos2:any=[0];
   datos1:any=[0];
   //precio;
@@ -127,6 +128,23 @@ export class TicketsadmnPage {
     },
 (error)=>{console.log(error); }
 )
+}
+nuevoso(){
+  
+  this.proveedor.nuevoso()
+  .subscribe(
+    (data)=>{
+      console.log(data);
+      this.otros=data;
+
+      //his.datos=data;
+  // console.log(this.datos);
+    //console.log(data[0]);
+    //console.log(this.contactos);   
+    },
+(error)=>{console.log(error); }
+)
+
 } 
 completos(){
   this.proveedor.completost()

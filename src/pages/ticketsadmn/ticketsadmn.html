@@ -20,7 +20,7 @@
   </ion-buttons>
   <ion-segment [(ngModel)]="ticketsadmn">
     <ion-segment-button value="newadmn" (click)="nuevos()" >Nuevos "PreDef"</ion-segment-button>
-    <ion-segment-button value="waitadmn">Nuevos "Otros"</ion-segment-button>
+    <ion-segment-button value="waitadmn" (click)="nuevoso()">Nuevos "Otros"</ion-segment-button>
     <ion-segment-button value="Reviewedadmn" (click)="en_revision()" >Revisados</ion-segment-button>
     <ion-segment-button value="finishadmn" (click)="completos()">Completos</ion-segment-button>
   </ion-segment>
@@ -51,7 +51,7 @@
           </ion-card>
     </ion-item>
   </ion-list>
-  <ion-list *ngSwitchCase="'wait'">
+  <ion-list *ngSwitchCase="'waitadmn'">
       <ion-item>
           <ion-card>
               <ion-card-header>
@@ -60,6 +60,12 @@
               <ion-card-content>
                 Estado de la revision del ticket
               </ion-card-content>
+              <ion-item *ngFor='let ot of otros' >
+                <h2 >Nombre: {{ot.nombre_ticket}} </h2> 
+                <h2>Descripcion:{{ot.descripcion_ticket}}</h2>
+                <h2>Estatus:{{ot.estatus_ticket}}</h2>
+                <button ion-button color="secondary" block (click)="doPrompt(new)">Pasar a ticket revisado</button>
+               </ion-item>
             </ion-card>
       </ion-item>
     </ion-list>

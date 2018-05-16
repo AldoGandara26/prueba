@@ -29,6 +29,14 @@ app.get('/nuevos', (req,res)=>
 
 		});
 	});
+app.get('/nuevoso', (req,res)=>
+	{
+		User.nuevoso((err, data)=>
+		{
+			res.status(200).json(data);
+
+		});
+	});
 
 app.get('/completos', (req,res)=>
 	{

@@ -33,7 +33,7 @@ nuevost()
 {
   return this.http.get('http://localhost:3000/nuevos');
 }
-nuevos()
+nuevos(idProducto)
 {
   return this.http.get('http://localhost:3000/nuevos');
 }
@@ -45,6 +45,10 @@ completos()
 {
   return this.http.get('http://localhost:3000/completos');
 }
+nuevoso()
+{
+  return this.http.get('http://localhost:3000/nuevoso');
+} 
 /*agregarDatos(){
   return this.http.post('http://localhost:3000/users' );
 } */

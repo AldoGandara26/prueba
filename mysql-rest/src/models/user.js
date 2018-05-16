@@ -31,7 +31,24 @@ userModel.revision =function (callback)
 		if (connection)
 			{
 				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
-				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison'",
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison' AND tipo='t1'",
+				(err, rows) =>
+				{
+				if (err)
+				 {
+					throw err;
+				} else {
+					
+					return callback(null, rows);
+				}})	
+			}	
+	};
+		userModel.nuevoso =function (callback)
+	{		
+		if (connection)
+			{
+				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison' AND tipo='t2'",
 				(err, rows) =>
 				{
 				if (err)
