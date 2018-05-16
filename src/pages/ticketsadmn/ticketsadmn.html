@@ -19,7 +19,7 @@
   <ion-buttons start>
   </ion-buttons>
   <ion-segment [(ngModel)]="ticketsadmn">
-    <ion-segment-button value="newadmn" (click)="nuevos()" >Nuevos</ion-segment-button>
+    <ion-segment-button value="newadmn" (click)="en_revision()" >Nuevos</ion-segment-button>
     <ion-segment-button value="waitadmn">En Revision</ion-segment-button>
     <ion-segment-button value="Reviewedadmn">Revisados</ion-segment-button>
     <ion-segment-button value="finishadmn">Completos</ion-segment-button>
@@ -27,13 +27,13 @@
 </ion-toolbar>
 </div>
 <div [ngSwitch]="ticketsadmn">
-  <ion-list *ngSwitchCase="'new'">
+  <ion-list *ngSwitchCase="'newadmn'">
     <ion-item>
         <ion-card>
-            <ion-card-header *ngFor="let aldo of datos">
+            <ion-card-header >
               Nuevo Ticket
             </ion-card-header>
-            <ion-card-content  (ngModel)="form1" >
+            <ion-card-content   >
               informacion del nuevo ticket
             <!-- *ngFor="let datoshtml  of datos" -->
             <!-- {{datoshtml.descripcion_ticket}}  -->
@@ -43,7 +43,7 @@
              <h2 >Nombre: {{aldo.nombre_ticket}} </h2> 
              <h2>Descripcion:{{aldo.descripcion_ticket}}</h2>
              <h2>Estatus:{{aldo.estatus_ticket}}</h2>
-             <button ion-button color="secondary" block (click)="doPrompt()">Show Prompt Alert</button>
+             <button ion-button color="secondary" block (click)="doPrompt(aldo)">Show Prompt Alert</button>
             </ion-item>
             <ion-list>
            </ion-list>

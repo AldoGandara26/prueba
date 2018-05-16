@@ -11,35 +11,26 @@ import { AlertController } from 'ionic-angular';
 export class TicketsadmnPage {
   nuevoticketPage= "NuevoticketPage"
   datos:any=[0];
+  datos1:any=[0];
+  precio;
   //form1='';
+  objeto;
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor: Provedor1Provider, public alertCtrl: AlertController  ) {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad TicketsPage');
   }
-  nuevos(){
-    this.proveedor.obtenerDatos()
-    .subscribe(
-      (data)=>{
-        console.log(data);
-        this.datos=data;
-
-        //his.datos=data;
-    // console.log(this.datos);
-      //console.log(data[0]);
-      //console.log(this.contactos);   
-      },
-  (error)=>{console.log(error); }
-      )
-    }
-    doPrompt() {
-      let prompt = this.alertCtrl.create({
+ 
+    doPrompt(obj) {
+     // console.log(obj);
+        let prompt = this.alertCtrl.create({
         title: 'Login',
         message: "Enter a name for this new album you're so keen on adding",
         inputs: [
           {
             name: 'title',
-            placeholder: 'Title'
+            placeholder: 'Title',
+            value: "precio"
           },
         ],
         buttons: [
@@ -52,14 +43,49 @@ export class TicketsadmnPage {
           {
             text: 'Save',
             handler: data => {
+            // console.log(obj);
+            this.objeto=obj;
+              this.cambio();
               console.log('Saved clicked');
+            
             }
           }
         ]
       });
       prompt.present();
+      
     }
+    en_revision(){
+      this.proveedor.revisados()
+      .subscribe(
+        (data)=>{
+          console.log(data);
+          this.datos=data;
   
+          //his.datos=data;
+      // console.log(this.datos);
+        //console.log(data[0]);
+        //console.log(this.contactos);   
+        },
+    (error)=>{console.log(error); }
+  )}
+  cambio(){
+    //console.log(this.objeto);
+    //console.log(this.obj);
+    let datos= {"nombre": this.precio, "id1":this.objeto.id}
+    //console.log(this.user1, this.pass);
+    let resultado_registro:any=this.proveedor.cambio(datos);
+   resultado_registro.subscribe(data=>{
+     
+   // console.log(data);
+   // alert("Sus ticket se ha enviado a TREZ");
+    //this.navCtrl.setRoot(HomePage)
+  
+  
+ }, error =>{
+    console.log("ooops");
+  });
+  }
   }
 
     

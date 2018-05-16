@@ -31,7 +31,7 @@ userModel.a =function (callback)
 		if (connection)
 			{
 				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
-				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en_revison'",
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison'",
 				(err, rows) =>
 				{
 				if (err)
@@ -109,6 +109,29 @@ userModel.b = function (insertData,callback)
 	if (connection)
 	{
 			connection.query('INSERT INTO tickets SET ?', insertData,
+			(err,result)=>
+			{
+				if (err)
+				{
+					console.log(err);
+					//throw err;
+					return callback(null,"error");
+				} 
+				else
+				{
+					//console.log("estamos cerca");
+					return callback(null,"correcto");
+					//callback(null,
+					//{'insertId': result.insertId})
+				}
+			})
+	};
+};
+userModel.l = function (updatedData,callback)
+{
+	if (connection)
+	{
+			connection.query("UPDATE tickets SET  precio='+updatedData.precio+', estatus_ticket='"+updatedData.aceptado+"' WHERE id='"+updatedData.id1+"';",
 			(err,result)=>
 			{
 				if (err)

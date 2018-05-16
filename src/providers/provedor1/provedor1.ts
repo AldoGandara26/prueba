@@ -15,6 +15,7 @@ export class Provedor1Provider {
  // private url = 'http//localhost:8000/users';
  api="http://localhost:3000/users";
  api1="http://localhost:3000/insert";
+ api2="http://localhost:3000/cambio";
  apiu="http://localhost:3000/api/users/login";
   constructor(public http: HttpClient) {
     console.log('Hello Provedor1Provider Provider');
@@ -27,6 +28,7 @@ revisados()
 {
   return this.http.get('http://localhost:3000/revisados');
 }
+
 
 /*agregarDatos(){
   return this.http.post('http://localhost:3000/users' );
@@ -47,6 +49,18 @@ enviardatos(datos){
     
   };
   const respuesta =this.http.post( consulta,datos,  headerOptions,);
+  return respuesta;
+}
+
+cambio(datos1){
+  let consulta =this.api2;
+  let headerOptions:any={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    
+  };
+  const respuesta =this.http.post( consulta,datos1,  headerOptions,);
   return respuesta;
 }
 post(datos){

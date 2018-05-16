@@ -103,10 +103,28 @@ app.get('/revisados', (req,res)=>
 			updated_at_ticket:null,
 			proyecto_id:null,
 			usuario_id:null,
-			estatus_ticket:"en revison"
+			estatus_ticket:"en revison",
+			precio:"380"
 		}
 			console.log(insertData);
 			User.b(insertData, function(err,us)
+			{
+        		console.log("---->"+us);
+			});
+	});
+
+	app.post('/cambio', (req, res) => 
+	{
+		const updatedData=
+		{
+			
+			precio:req.body.precio,
+			
+			estatus:"aceptado",
+			id1:req.body.id1
+		}
+			//console.log(insertData);
+			User.l(updatedData, function(err,us)
 			{
         		console.log("---->"+us);
 			});
