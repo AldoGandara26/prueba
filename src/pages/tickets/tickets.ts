@@ -14,8 +14,11 @@ export class TicketsPage {
   nuevosdata:any=[0];
   datos_revisados:any=[0];
   datos_terminados:any=[0];
+   idProducto;
   //form1='';
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor: Provedor1Provider ) {
+    this.idProducto = navParams.get("idProduct");
+   // console.log(navParams.get("idProduct"));
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad TicketsPage');
@@ -51,7 +54,7 @@ revisados(){
 
 }
   nuevos(){
-    this.proveedor.nuevos()
+    this.proveedor.nuevos(this.idProducto)
   .subscribe(
     (data)=>{
       console.log(data);

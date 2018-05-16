@@ -109,12 +109,17 @@ userModel.login = function (userData,callback)
 							if ( rows[0].pass_usuario == userData.pass) 
 							{ 
 								if(rows[0].tipo=="1"){
-									console.log("estoy aqui");
 
-									return callback(null,"correcto1");
+								
+								const aldo=rows[0].Id;
+								//console.log(aldo);
+									return callback(null,"correcto1",aldo);
 								}
 								else{
-									return callback(null,"correcto");
+								const aldo=rows.Id;
+								//console.log(aldo);
+
+									return callback(null,"correcto",);
 								}
 								
 

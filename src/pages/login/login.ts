@@ -16,6 +16,7 @@ export class LoginPage {
 pass;
 user1;
 datos;
+id;
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor: Provedor1Provider) {
   }
 
@@ -40,13 +41,19 @@ else{
   }
   else{
     if(data.respuesta=="correcto"){
+      console.log(data.respuesta);
       alert("usuario y contrasena corectos");
     this.navCtrl.setRoot(TicketsadmnPage );}
     else{
       if(data.respuesta=="correcto1")
       {
+        
+         this.id= data.aldo;
+    
       alert("usuario y contrasena corectos");
-      this.navCtrl.setRoot(TicketsPage  );
+      this.navCtrl.push(TicketsPage,
+         { 'idProduct': this.id}  );
+         
     }
 
     }

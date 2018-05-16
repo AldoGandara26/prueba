@@ -55,9 +55,9 @@ app.get('/completos', (req,res)=>
 			nombre: req.body.nombre_usuario,
 			pass:  req.body.pass_usuario			
 		}
-		User.login(userData, function(err,us)
+		User.login(userData, function(err,us,aldo)
 		{
-		 console.log(us);
+		 
 
 		 if(us =="indefinido")
 		 {
@@ -67,7 +67,7 @@ app.get('/completos', (req,res)=>
 		 else{
 		 	if (us =="nocoinciden"){
 		 	res.send(JSON.stringify({respuesta: "nocoinciden" }));
-		 		console.log("no");
+		 		
 
 		 	}
 		 	else{
@@ -77,7 +77,8 @@ app.get('/completos', (req,res)=>
 		 		else{
 		 			if(us=="correcto1"){
 
-		 					res.send(JSON.stringify({respuesta: "correcto1" }));
+
+		 					res.send(JSON.stringify({respuesta: "correcto1",aldo: aldo }));
 		 			}
 		 			//res.send("mal");
 		 		}
