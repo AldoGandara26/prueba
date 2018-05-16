@@ -15,6 +15,7 @@ export class TicketsadmnPage {
   datos1:any=[0];
   //precio;
   nuevosd:any=[0];
+  nuevosc:any=[0];
   input;
   input2;
   //form1='';
@@ -114,7 +115,7 @@ export class TicketsadmnPage {
   )}
   nuevos()
 {
-  this.proveedor.nuevos()
+  this.proveedor.nuevost()
   .subscribe(
     (data)=>{
       console.log(data);
@@ -128,6 +129,21 @@ export class TicketsadmnPage {
 (error)=>{console.log(error); }
 )
 } 
+completos(){
+  this.proveedor.completost()
+  .subscribe(
+    (data)=>{
+      console.log(data);
+      this.nuevosc=data;
+
+      //his.datos=data;
+  // console.log(this.datos);
+    //console.log(data[0]);
+    //console.log(this.contactos);   
+    },
+(error)=>{console.log(error); }
+)
+}
  cambio(){
     //console.log(this.objeto);
   //console.log(this.precio);
@@ -146,7 +162,7 @@ export class TicketsadmnPage {
   });
   }
   cambiorevisado(){
-    console.log("----------->"+this.objeto2.id);
+   
     let datos= {"comentario": this.input2, "id1":this.objeto2.id}
     //console.log(this.user1, this.pass);
     let resultado_registro:any=this.proveedor.cambiorevisado(datos);

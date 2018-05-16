@@ -29,9 +29,13 @@ revisados()
 {
   return this.http.get('http://localhost:3000/revisados');
 }
-nuevos()
+nuevost()
 {
   return this.http.get('http://localhost:3000/nuevos');
+}
+completost()
+{
+  return this.http.get('http://localhost:3000/completos');
 }
 
 /*agregarDatos(){

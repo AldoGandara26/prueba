@@ -22,7 +22,7 @@
     <ion-segment-button value="newadmn" (click)="nuevos()" >Nuevos</ion-segment-button>
     <ion-segment-button value="waitadmn">En Revision</ion-segment-button>
     <ion-segment-button value="Reviewedadmn" (click)="en_revision()" >Revisados</ion-segment-button>
-    <ion-segment-button value="finishadmn">Completos</ion-segment-button>
+    <ion-segment-button value="finishadmn" (click)="completos()">Completos</ion-segment-button>
   </ion-segment>
 </ion-toolbar>
 </div>
@@ -81,15 +81,20 @@
             </ion-card>
       </ion-item>
     </ion-list>
-    <ion-list *ngSwitchCase="'finish'">
+    <ion-list *ngSwitchCase="'finishadmn'">
         <ion-item>
             <ion-card>
                 <ion-card-header>
-                  Ticket finalizado
+                  Ticket finalizado f
                 </ion-card-header>
                 <ion-card-content>
-                  Informacion de la terminacion del ticket
+                  Informacion de la terminacion del ticket 
                 </ion-card-content>
+                <ion-item *ngFor='let terminados of nuevosc' >
+                  <h2 >Nombre: {{terminados.nombre_ticket}} </h2> 
+                  <h2>Descripcion:{{terminados.descripcion_ticket}}</h2>
+                  <h2>Estatus:{{terminados.estatus_ticket}}</h2>
+                </ion-item>
               </ion-card>
         </ion-item>
       </ion-list>

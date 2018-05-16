@@ -30,6 +30,15 @@ app.get('/nuevos', (req,res)=>
 		});
 	});
 
+app.get('/completos', (req,res)=>
+	{
+		User.c((err, data)=>
+		{
+			res.status(200).json(data);
+
+		});
+	});
+
 
 
 
