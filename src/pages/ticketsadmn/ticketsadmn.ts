@@ -12,7 +12,9 @@ export class TicketsadmnPage {
   nuevoticketPage= "NuevoticketPage"
   datos:any=[0];
   datos1:any=[0];
-  precio;
+  //precio;
+  nuevosd:any=[0];
+  input;
   //form1='';
   objeto;
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor: Provedor1Provider, public alertCtrl: AlertController  ) {
@@ -30,8 +32,8 @@ export class TicketsadmnPage {
           {
             name: 'title',
             placeholder: 'Title',
-            value: "precio"
-          },
+           
+                    },
         ],
         buttons: [
           {
@@ -44,6 +46,8 @@ export class TicketsadmnPage {
             text: 'Save',
             handler: data => {
             // console.log(obj);
+            this.input=data.title;
+            //console.log(JSON.stringify(data));
             this.objeto=obj;
               this.cambio();
               console.log('Saved clicked');
@@ -69,10 +73,26 @@ export class TicketsadmnPage {
         },
     (error)=>{console.log(error); }
   )}
-  cambio(){
+  nuevos()
+{
+  this.proveedor.nuevos()
+  .subscribe(
+    (data)=>{
+      console.log(data);
+      this.nuevosd=data;
+
+      //his.datos=data;
+  // console.log(this.datos);
+    //console.log(data[0]);
+    //console.log(this.contactos);   
+    },
+(error)=>{console.log(error); }
+)
+} 
+ cambio(){
     //console.log(this.objeto);
-    //console.log(this.obj);
-    let datos= {"nombre": this.precio, "id1":this.objeto.id}
+  //console.log(this.precio);
+    let datos= {"precio": this.input, "id1":this.objeto.id}
     //console.log(this.user1, this.pass);
     let resultado_registro:any=this.proveedor.cambio(datos);
    resultado_registro.subscribe(data=>{

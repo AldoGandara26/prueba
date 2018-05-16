@@ -19,9 +19,9 @@
   <ion-buttons start>
   </ion-buttons>
   <ion-segment [(ngModel)]="ticketsadmn">
-    <ion-segment-button value="newadmn" (click)="en_revision()" >Nuevos</ion-segment-button>
+    <ion-segment-button value="newadmn" (click)="nuevos()" >Nuevos</ion-segment-button>
     <ion-segment-button value="waitadmn">En Revision</ion-segment-button>
-    <ion-segment-button value="Reviewedadmn">Revisados</ion-segment-button>
+    <ion-segment-button value="Reviewedadmn" (click)="en_revision()" >Revisados</ion-segment-button>
     <ion-segment-button value="finishadmn">Completos</ion-segment-button>
   </ion-segment>
 </ion-toolbar>
@@ -35,16 +35,17 @@
             </ion-card-header>
             <ion-card-content   >
               informacion del nuevo ticket
+              <ion-item *ngFor='let new of nuevosd' >
+                <h2 >Nombre: {{new.nombre_ticket}} </h2> 
+                <h2>Descripcion:{{new.descripcion_ticket}}</h2>
+                <h2>Estatus:{{new.estatus_ticket}}</h2>
+                <button ion-button color="secondary" block (click)="doPrompt(aldo)">Show Prompt Alert</button>
+               </ion-item>
             <!-- *ngFor="let datoshtml  of datos" -->
             <!-- {{datoshtml.descripcion_ticket}}  -->
             </ion-card-content>
             
-            <ion-item *ngFor='let aldo of datos' >
-             <h2 >Nombre: {{aldo.nombre_ticket}} </h2> 
-             <h2>Descripcion:{{aldo.descripcion_ticket}}</h2>
-             <h2>Estatus:{{aldo.estatus_ticket}}</h2>
-             <button ion-button color="secondary" block (click)="doPrompt(aldo)">Show Prompt Alert</button>
-            </ion-item>
+            
             <ion-list>
            </ion-list>
           </ion-card>
@@ -59,6 +60,24 @@
               <ion-card-content>
                 Estado de la revision del ticket
               </ion-card-content>
+            </ion-card>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'Reviewedadmn'">
+      <ion-item>
+          <ion-card>
+              <ion-card-header>
+                Ticket revisados
+              </ion-card-header>
+              <ion-card-content>
+                Estado de la revision del ticket
+              </ion-card-content>
+              <ion-item *ngFor='let aldo of datos' >
+                <h2 >Nombre: {{aldo.nombre_ticket}} </h2> 
+                <h2>Descripcion:{{aldo.descripcion_ticket}}</h2>
+                <h2>Estatus:{{aldo.estatus_ticket}}</h2>
+                <button ion-button color="secondary" block (click)="doPrompt(aldo)">Show Prompt Alert</button>
+               </ion-item>
             </ion-card>
       </ion-item>
     </ion-list>

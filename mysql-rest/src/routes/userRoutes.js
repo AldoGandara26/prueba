@@ -21,6 +21,14 @@ app.get('/revisados', (req,res)=>
 		});
 	});
 
+app.get('/nuevos', (req,res)=>
+	{
+		User.n((err, data)=>
+		{
+			res.status(200).json(data);
+
+		});
+	});
 
 
 

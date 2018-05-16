@@ -21,12 +21,12 @@ userModel.a =function (callback)
 				 {
 					throw err;
 				} else {
-					console.log("estamos aqui");
+					
 					return callback(null, rows);
 				}})	
 			}	
 	};
-	userModel.r =function (callback)
+	userModel.n =function (callback)
 	{		
 		if (connection)
 			{
@@ -38,7 +38,24 @@ userModel.a =function (callback)
 				 {
 					throw err;
 				} else {
-					console.log("estamos aqui");
+					
+					return callback(null, rows);
+				}})	
+			}	
+	};
+	userModel.r =function (callback)
+	{		
+		if (connection)
+			{
+				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='aceptado'",
+				(err, rows) =>
+				{
+				if (err)
+				 {
+					throw err;
+				} else {
+					console.log(rows);
 					return callback(null, rows);
 				}})	
 			}	
@@ -132,7 +149,7 @@ userModel.l = function (updatedData,callback)
 	console.log(updatedData);
 	if (connection)
 	{
-			connection.query("UPDATE tickets SET  precio='+updatedData.precio+', estatus_ticket='"+updatedData.aceptado+"' WHERE id='"+updatedData.id1+"';",
+			connection.query("UPDATE tickets SET  precio='"+updatedData.precio+"', estatus_ticket='"+updatedData.estatus+"' WHERE id='"+updatedData.id1+"';",
 			(err,result)=>
 			{
 				if (err)

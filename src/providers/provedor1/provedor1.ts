@@ -28,7 +28,10 @@ revisados()
 {
   return this.http.get('http://localhost:3000/revisados');
 }
-
+nuevos()
+{
+  return this.http.get('http://localhost:3000/nuevos');
+}
 
 /*agregarDatos(){
   return this.http.post('http://localhost:3000/users' );

@@ -11,6 +11,7 @@ export class TicketsPage {
   
   nuevoticketPage= "NuevoticketPage"
   datos:any=[0];
+  nuevosdata:any=[0];
   datos_revisados:any=[0];
   //form1='';
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor: Provedor1Provider ) {
@@ -48,5 +49,20 @@ revisados(){
 )
 
 }
-  
+  nuevos(){
+    this.proveedor.nuevos()
+  .subscribe(
+    (data)=>{
+      console.log(data);
+      this.nuevosdata=data;
+
+      //his.datos=data;
+  // console.log(this.datos);
+    //console.log(data[0]);
+    //console.log(this.contactos);   
+    },
+(error)=>{console.log(error); }
+)
+
 }
+  }
