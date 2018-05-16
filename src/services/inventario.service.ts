@@ -10,6 +10,5 @@ export class InventarioService {
  private headers = new Headers({'Content-Type': 'application/json'});
  private url = 'http//localhost:8000/users'
     constructor(){
-
     }
 }
