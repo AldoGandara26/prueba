@@ -55,7 +55,6 @@ export class TicketsadmnPage {
             this.objeto=obj;
               this.cambio();
               console.log('Saved clicked');
-            
             }
           }
         ]
