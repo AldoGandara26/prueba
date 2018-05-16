@@ -30,8 +30,8 @@ export class TicketsadmnPage {
     doPrompt(obj) {
      // console.log(obj);
         let prompt = this.alertCtrl.create({
-        title: 'Login',
-        message: "Enter a name for this new album you're so keen on adding",
+        title: 'Ticket Revisado',
+        message: "Costo por hora",
         inputs: [
           {
             name: 'title',
