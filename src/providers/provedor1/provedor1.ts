@@ -33,11 +33,18 @@ nuevost()
 {
   return this.http.get('http://localhost:3000/nuevos');
 }
+nuevos()
+{
+  return this.http.get('http://localhost:3000/nuevos');
+}
 completost()
 {
   return this.http.get('http://localhost:3000/completos');
 }
-
+completos()
+{
+  return this.http.get('http://localhost:3000/completos');
+}
 /*agregarDatos(){
   return this.http.post('http://localhost:3000/users' );
 } */

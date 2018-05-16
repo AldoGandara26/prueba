@@ -51,7 +51,7 @@ revisados(){
 
 }
   nuevos(){
-    this.proveedor.nuevost()
+    this.proveedor.nuevos()
   .subscribe(
     (data)=>{
       console.log(data);
@@ -67,7 +67,7 @@ revisados(){
 
 }
 completos(){
-  this.proveedor.completost()
+  this.proveedor.completos()
   .subscribe(
     (data)=>{
       console.log(data);
