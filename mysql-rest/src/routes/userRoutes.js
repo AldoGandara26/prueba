@@ -21,10 +21,15 @@ app.get('/revisados', (req,res)=>
 		});
 	});
 
-app.get('/nuevos', (req,res)=>
+app.get('/nuevos/:idProducto', (req,res)=>
 	{
-		User.nuevos((err, data)=>
+		
+		let idProducto=req.params.idProducto
+
+		
+		User.nuevos( idProducto, function (err, data)
 		{
+			console.log(data);
 			res.status(200).json(data);
 
 		});
@@ -40,6 +45,7 @@ app.get('/nuevoso', (req,res)=>
 
 app.get('/completos', (req,res)=>
 	{
+	
 		User.c((err, data)=>
 		{
 			res.status(200).json(data);
@@ -170,7 +176,23 @@ app.get('/completos', (req,res)=>
 			//console.log(insertData);
 			User.cambior(updatedData2, function(err,us)
 			{
-        		console.log("---->"+us);
+        		console.log("----25>"+us);
 			});
 	});
+
+
+	app.post('/prueba', (req, res) => 
+	{
+		const prueba1=
+		{		
+			idcliente:req.body.idcliente			
+		}
+			User.prueba(prueba1, function(err,us)
+			{
+        		
+        					});
+	});
+
+
+
 }

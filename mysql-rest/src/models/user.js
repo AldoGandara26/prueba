@@ -26,12 +26,32 @@ userModel.revision =function (callback)
 				}})	
 			}	
 	};
-	userModel.nuevos =function (callback)
-	{		
+	userModel.prueba =function (prueba1, callback)
+	{	
+	console.log(prueba1);	
 		if (connection)
 			{
 				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
-				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison' AND tipo='t1'",
+				connection.query("SELECT * FROM users WHERE id= '"+prueba1.idcliente+"'; ",
+				(err, rows) =>
+				{
+				if (err)
+				 {
+					throw err;
+				} else {
+					console.log(rows);
+					return callback(null, rows);
+
+				}})	
+			}	
+	};
+	userModel.nuevos =function (idProducto, callback )
+	{	
+		
+		if (connection)
+			{
+				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison' AND tipo='t1' AND usuario_id='"+idProducto+"'; ",
 				(err, rows) =>
 				{
 				if (err)

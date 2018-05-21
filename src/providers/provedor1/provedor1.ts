@@ -16,6 +16,7 @@ export class Provedor1Provider {
  api="http://localhost:3000/users";
  api1="http://localhost:3000/insert";
  api2="http://localhost:3000/cambio";
+ api4="http://localhost:3000/prueba";
  api3="http://localhost:3000/cambiorevisado";
  apiu="http://localhost:3000/api/users/login";
   constructor(public http: HttpClient) {
@@ -35,7 +36,8 @@ nuevost()
 }
 nuevos(idProducto)
 {
-  return this.http.get('http://localhost:3000/nuevos');
+  console.log(idProducto);
+  return this.http.get('http://localhost:3000/nuevos/"'+idProducto+'"');
 }
 completost()
 {
@@ -59,8 +61,21 @@ let url ="http://localhost:3000/users";
 let request=this.http.post(url, param);
 return request.toPromise();
 }*/
+enviaid(datos){
+  let consulta =this.api4;
+  let headerOptions:any={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    
+  };
+  const respuesta =this.http.post( consulta,datos,  headerOptions,);
+  return respuesta;
+
+}
 enviardatos(datos){
   let consulta =this.api;
+  console.log(datos);
   let headerOptions:any={
     headers: new HttpHeaders({
       'Content-Type': 'application/json'

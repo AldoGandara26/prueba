@@ -18,7 +18,7 @@ export class TicketsPage {
   //form1='';
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor: Provedor1Provider ) {
     this.idProducto = navParams.get("idProduct");
-   // console.log(navParams.get("idProduct"));
+    //console.log(navParams.get("idProduct"));
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad TicketsPage');
@@ -54,16 +54,25 @@ revisados(){
 
 }
   nuevos(){
+   /// console.log("--->"+this.idProducto);
+  /*  let datos= {"idcliente": this.idProducto}
+    console.log("---->"+this.datos);
+    let resultado_registro:any=this.proveedor.enviaid(datos);
+   resultado_registro.subscribe(data=>
+    {  
+    }, error =>{
+    console.log("ooops");
+  });*/
     this.proveedor.nuevos(this.idProducto)
   .subscribe(
     (data)=>{
       console.log(data);
       this.nuevosdata=data;
-
-      //his.datos=data;
-  // console.log(this.datos);
-    //console.log(data[0]);
-    //console.log(this.contactos);   
+    
+      
+    
+     
+      
     },
 (error)=>{console.log(error); }
 )
