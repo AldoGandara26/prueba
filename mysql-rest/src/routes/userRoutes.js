@@ -29,7 +29,7 @@ app.get('/nuevos/:idProducto', (req,res)=>
 		
 		User.nuevos( idProducto, function (err, data)
 		{
-			console.log(data);
+			
 			res.status(200).json(data);
 
 		});

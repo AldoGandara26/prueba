@@ -53,27 +53,14 @@ revisados(){
 )
 
 }
-  nuevos(){
-   /// console.log("--->"+this.idProducto);
-  /*  let datos= {"idcliente": this.idProducto}
-    console.log("---->"+this.datos);
-    let resultado_registro:any=this.proveedor.enviaid(datos);
-   resultado_registro.subscribe(data=>
-    {  
-    }, error =>{
-    console.log("ooops");
-  });*/
+  nuevos()
+  {
     this.proveedor.nuevos(this.idProducto)
-  .subscribe(
-    (data)=>{
-      console.log(data);
+    .subscribe(
+    (data)=>
+    {  
       this.nuevosdata=data;
-    
-      
-    
-     
-      
-    },
+     },
 (error)=>{console.log(error); }
 )
 
