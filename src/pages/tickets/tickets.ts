@@ -28,12 +28,7 @@ export class TicketsPage {
     .subscribe(
       (data)=>{
         console.log(data);
-        this.datos=data;
-
-        //his.datos=data;
-    // console.log(this.datos);
-      //console.log(data[0]);
-      //console.log(this.contactos);   
+        this.datos=data;  
       },
   (error)=>{console.log(error); }
 )}
@@ -42,12 +37,7 @@ revisados(){
   .subscribe(
     (data)=>{
       console.log(data);
-      this.datos_revisados=data;
-
-      //his.datos=data;
-  // console.log(this.datos);
-    //console.log(data[0]);
-    //console.log(this.contactos);   
+      this.datos_revisados=data;  
     },
 (error)=>{console.log(error); }
 )
@@ -70,12 +60,7 @@ completos(){
   .subscribe(
     (data)=>{
       console.log(data);
-      this.datos_terminados=data;
-
-      //his.datos=data;
-  // console.log(this.datos);
-    //console.log(data[0]);
-    //console.log(this.contactos);   
+      this.datos_terminados=data;   
     },
 (error)=>{console.log(error); }
 )
