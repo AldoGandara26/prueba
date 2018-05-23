@@ -1,3 +1,4 @@
+import { TicketsadmnPage } from './../pages/ticketsadmn/ticketsadmn';
 import { TicketsPageModule } from './../pages/tickets/tickets.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
