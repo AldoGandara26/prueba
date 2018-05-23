@@ -65,7 +65,7 @@ userModel.revision =function (callback)
 			{
 				console.log(idcliente);
 				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
-				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison' AND tipo='t2' AND usuario_id = '"+idcliente+"'; ", 
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison'    AND usuario_id = '"+idcliente+"'; ", 
 				(err, rows) =>
 				{
 				if (err)
@@ -83,7 +83,25 @@ userModel.revision =function (callback)
 		if (connection)
 			{
 				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
-				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison' AND tipo='t2' AND usuario_id='"+idProducto+"'; ",
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison' AND tipo='t2'  ",
+				(err, rows) =>
+				{
+				if (err)
+				 {
+					throw err;
+				} else {
+					
+					return callback(null, rows);
+				}})	
+			}	
+	};
+//se hace el select para los tickets predefinidos del administrados
+	userModel.nuevosp =function (callback)
+	{		
+		if (connection)
+			{
+				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison' AND tipo='t1'  ",
 				(err, rows) =>
 				{
 				if (err)

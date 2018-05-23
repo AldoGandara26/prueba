@@ -32,12 +32,12 @@ revisados()
 }
 nuevost()
 {
-  return this.http.get('http://localhost:3000/nuevos');
+  return this.http.get('http://localhost:3000/nuevospred');
 }
 nuevos(idProducto)
 {
   console.log(idProducto);
-  return this.http.get('http://localhost:3000/nuevos/"'+idProducto+'"');
+  return this.http.get('http://localhost:3000/nuevos/'+idProducto);
 }
 completost()
 {

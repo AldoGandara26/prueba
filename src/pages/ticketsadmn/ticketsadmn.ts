@@ -114,7 +114,7 @@ export class TicketsadmnPage {
         },
     (error)=>{console.log(error); }
   )}
-  nuevos()
+  nuevosp()
 {
   this.proveedor.nuevost()
   .subscribe(

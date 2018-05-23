@@ -24,8 +24,9 @@ app.get('/revisados', (req,res)=>
 
 app.get('/nuevos/:idProducto', (req,res)=>
 	{
-		
+		console.log(req.params);
 		let idcliente=req.params.idProducto
+
 
 		
 		User.nuevos( idcliente, function (err, data)
@@ -38,6 +39,16 @@ app.get('/nuevos/:idProducto', (req,res)=>
 app.get('/nuevoso', (req,res)=>
 	{
 		User.nuevoso((err, data)=>
+		{
+			res.status(200).json(data);
+
+		});
+	});
+//ruta para predefinidos del administrador
+app.get('/nuevospred', (req,res)=>
+	{
+		//se invoca el metodo para el select de predef para admin
+		User.nuevosp((err, data)=>
 		{
 			res.status(200).json(data);
 
