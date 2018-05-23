@@ -1,3 +1,4 @@
+import { NuserPage } from './../nuser/nuser';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import{Provedor1Provider} from '../../providers/provedor1/provedor1';
@@ -178,6 +179,9 @@ completos(){
     console.log("ooops");
   });
   }
+  newuser(){
+    this.navCtrl.push(NuserPage);
+  }
   cambiorevisado(){
    
     let datos= {"comentario": this.input2, "id1":this.objeto2.id}
@@ -188,7 +192,7 @@ completos(){
    // console.log(data);
    // alert("Sus ticket se ha enviado a TREZ");
     //this.navCtrl.setRoot(HomePage)
-  
+   
   
  }, error =>{
     console.log("ooops");

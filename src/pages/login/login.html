@@ -2,29 +2,32 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Login
+      
+      SOPORTE TECNICO "TREZ"
     </ion-title>
   </ion-navbar>
 </ion-header>
+<ion-content padding class="getstart">
+    <ion-card class="tablogin">
+        <ion-card-header class="title1" align="center" >
+          INICIAR SESION
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list>
+                <ion-item class="user">
+            <ion-label floating>Usuario</ion-label>
+            <ion-input type="text" #username  [(ngModel)]="user1"></ion-input>
+            </ion-item>
+            <ion-item class="password">
+                <ion-label floating>Contrasena</ion-label>
+                <ion-input type="password" #password   [(ngModel)]="pass"></ion-input>
+                </ion-item>
+              </ion-list>
+              <div>
+                <button ion-button (click)="enviar()" block class="btnlgn">Iniciar Sesion</button>
+              </div>
+        </ion-card-content>
+      </ion-card>
 
-
-<ion-content padding>
-<ion-list>
-<ion-item>
-<ion-label floating>Usuario</ion-label>
-<ion-input type="text" #username  [(ngModel)]="user1"></ion-input>
-</ion-item>
-
-<ion-item>
-    <ion-label floating>Contrasena</ion-label>
-    <ion-input type="password" #password   [(ngModel)]="pass"></ion-input>
-    </ion-item>
-
-
-  </ion-list>
-
-  <div>
-    <button ion-button (click)="enviar()" block>Sign In</button>
-  </div>
-
+    
 </ion-content>

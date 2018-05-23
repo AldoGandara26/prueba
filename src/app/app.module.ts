@@ -1,3 +1,5 @@
+import { NuserPage } from './../pages/nuser/nuser';
+import { TicketsadmnPage } from './../pages/ticketsadmn/ticketsadmn';
 import { TicketsPageModule } from './../pages/tickets/tickets.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -27,7 +29,11 @@ import {NuevoticketPage} from '../pages/nuevoticket/nuevoticket';
     ListPage,
     NosotrosPage,
     ContactoPage,
+<<<<<<< HEAD
     NuevoticketPage
+=======
+    NuserPage
+>>>>>>> 9442a6d26aecf2e1b48c6fbfc8c53078e47a7bbd
   ],
   imports: [
     BrowserModule,
@@ -44,7 +50,11 @@ import {NuevoticketPage} from '../pages/nuevoticket/nuevoticket';
     ListPage,
     NosotrosPage,
     ContactoPage,
+<<<<<<< HEAD
     NuevoticketPage
+=======
+    NuserPage
+>>>>>>> 9442a6d26aecf2e1b48c6fbfc8c53078e47a7bbd
   ],
   providers: [
     StatusBar,
