@@ -2,6 +2,7 @@ import { NuevoticketPage } from './../nuevoticket/nuevoticket';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import{Provedor1Provider} from '../../providers/provedor1/provedor1';
+
 @IonicPage()
 @Component({
   selector: 'page-tickets',
@@ -14,14 +15,19 @@ export class TicketsPage {
   nuevosdata:any=[0];
   datos_revisados:any=[0];
   datos_terminados:any=[0];
-   idProducto;
+   idCliente;
   //form1='';
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor: Provedor1Provider ) {
-    this.idProducto = navParams.get("idProduct");
+    this.idCliente = navParams.get("idProduct");
     //console.log(navParams.get("idProduct"));
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad TicketsPage');
+    console.log(this.idCliente);
+    }
+  nuevoticket(){
+    this.navCtrl.push(NuevoticketPage,
+      { 'idcliente': this.idCliente}  );    
   }
   en_revision(){
     this.proveedor.obtenerDatos()
@@ -45,11 +51,12 @@ revisados(){
 }
   nuevos()
   {
-    this.proveedor.nuevos(this.idProducto)
+    this.proveedor.nuevos(this.idCliente)
     .subscribe(
     (data)=>
     {  
       this.nuevosdata=data;
+      console.log(this.nuevosdata);
      },
 (error)=>{console.log(error); }
 )

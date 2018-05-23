@@ -1,5 +1,6 @@
 const User = require('../models/user');
 
+
 module.exports=function (app)
 {
 	app.get('/users', (req,res)=>
@@ -24,10 +25,10 @@ app.get('/revisados', (req,res)=>
 app.get('/nuevos/:idProducto', (req,res)=>
 	{
 		
-		let idProducto=req.params.idProducto
+		let idcliente=req.params.idProducto
 
 		
-		User.nuevos( idProducto, function (err, data)
+		User.nuevos( idcliente, function (err, data)
 		{
 			
 			res.status(200).json(data);
@@ -121,6 +122,7 @@ app.get('/completos', (req,res)=>
 
 	app.post('/insert', (req, res) => 
 	{
+		console.log(req);
 		const insertData=
 		{
 			id: null,
@@ -134,11 +136,11 @@ app.get('/completos', (req,res)=>
 			created_at_ticket:null,
 			updated_at_ticket:null,
 			proyecto_id:null,
-			usuario_id:null,
+			usuario_id:req.body.id_cliente,
 			estatus_ticket:"en revison",
 			precio:"380"
 		}
-			//console.log(insertData);
+			console.log(insertData);
 			User.b(insertData, function(err,us)
 			{
         		//console.log("---->"+us);
@@ -191,6 +193,29 @@ app.get('/completos', (req,res)=>
 			{
         		
         					});
+	});
+
+	app.post('/inserthash', (req, res) => 
+	{
+		
+		const insertData=
+		{
+			id: null,
+			nombre_usuario:req.body.nombre,
+			pass_usuario:req.body.pass,
+			telefono_usuario:req.body.telefono,
+			tipo:req.body.tipo
+			
+		}
+		console.log(insertData);
+
+
+
+			//console.log(insertData);
+			User.be(insertData, function(err,us)
+			{
+        		//console.log("---->"+us);
+			});
 	});
 
 

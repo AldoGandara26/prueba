@@ -1,4 +1,8 @@
 const mysql=require('../../node_modules/mysql');
+var bcrypt = require('bcrypt');
+const saltRounds = 10;
+const myPlaintextPassword = 's0/\/\P4$$w0rD';
+const someOtherPlaintextPassword = 'not_bacon';
 
 connection=mysql.createConnection({
 	host:'localhost',
@@ -13,6 +17,15 @@ userModel.revision =function (callback)
 	{		
 		if (connection)
 			{
+
+		/*	bcrypt.genSalt(saltRounds, function(err, salt) {
+    		bcrypt.hash(insertData.pass_usuario, salt, function(err, hash) {
+    		console.log(hash);
+        // Store hash in your password DB.
+    });
+});*/
+
+
 				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
 				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison'",
 				(err, rows) =>
@@ -45,19 +58,21 @@ userModel.revision =function (callback)
 				}})	
 			}	
 	};
-	userModel.nuevos =function (idProducto, callback )
+	userModel.nuevos =function (idcliente, callback )
 	{	
 		
 		if (connection)
 			{
+				console.log(idcliente);
 				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
-				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison' AND tipo='t1' AND usuario_id='"+idProducto+"'; ",
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison' AND tipo='t2' AND usuario_id = '"+idcliente+"'; ", 
 				(err, rows) =>
 				{
 				if (err)
 				 {
 					throw err;
 				} else {
+					console.log(rows);
 					
 					return callback(null, rows);
 				}})	
@@ -68,7 +83,7 @@ userModel.revision =function (callback)
 		if (connection)
 			{
 				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
-				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison' AND tipo='t2'",
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en revison' AND tipo='t2' AND usuario_id='"+idProducto+"'; ",
 				(err, rows) =>
 				{
 				if (err)
@@ -143,6 +158,8 @@ userModel.login = function (userData,callback)
 						}
 						else
 						{
+
+
 							if ( rows[0].pass_usuario == userData.pass) 
 							{ 
 								if(rows[0].tipo=="1"){
@@ -172,6 +189,56 @@ userModel.login = function (userData,callback)
 								return callback(null,"nocoinciden");
 								console.log('usuario y contra no coinciden');
 							}
+
+							/*
+
+
+
+							bcrypt.compare(rows[0].pass_usuario, userData.pass, function(err, result){
+								if(result)
+									{
+										if(rows[0].tipo=="1"){
+											const aldo=rows[0].Id;
+								//console.log(aldo);
+									return callback(null,"correcto1",aldo);
+								}
+									}
+									else{
+										if (rows[0].tipo=="0"){
+											const aldo=rows[0].Id;
+								//console.log(aldo);
+
+									return callback(null,"correcto",aldo);
+
+										}
+										else{
+											console.log(result);
+											return callback(null,"nocoinciden");
+								console.log('usuario y contra no coinciden');
+
+
+										}
+										
+									}
+							});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							*/
+
+
 						}
 					}
 				}
@@ -203,6 +270,38 @@ userModel.b = function (insertData,callback)
 			})
 	};
 };
+
+userModel.be = function (insertData,callback)
+{
+	if (connection)
+	{
+		/*bcrypt.genSalt(saltRounds, function(err, salt) {
+    		bcrypt.hash(insertData.pass_usuario, salt, function(err, hash) {
+    		console.log(hash);
+        // Store hash in your password DB.
+    });
+});*/
+			connection.query('INSERT INTO users SET ?', insertData,
+			(err,result)=>
+			{
+				if (err)
+				{
+					console.log(err);
+					//throw err;
+					return callback(null,"error");
+				} 
+				else
+				{
+					//console.log("estamos cerca");
+					return callback(null,"correcto");
+					//callback(null,
+					//{'insertId': result.insertId})
+				}
+			})
+	};
+};
+
+
 userModel.cambiop = function (updatedData,callback)
 {
 	console.log(updatedData);

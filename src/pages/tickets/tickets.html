@@ -4,7 +4,8 @@
         </ion-buttons>
         <ion-title>Mis Tickets</ion-title>
         <ion-buttons end>
-            <button ion-button icon-only [navPush]="nuevoticketPage">
+          <!--[navPush]="nuevoticketPage"-->
+            <button ion-button icon-only (click)="nuevoticket()" >
               Nuevo Ticket
                 <ion-icon name="create"></ion-icon>
               </button>

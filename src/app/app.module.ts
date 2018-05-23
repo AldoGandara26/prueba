@@ -17,6 +17,7 @@ import { VariablesProviderProvider } from '../providers/variables-provider/varia
 import { Provedor1Provider } from '../providers/provedor1/provedor1';
 import {HttpClientModule} from '@angular/common/http';
 import { RestProvider } from '../providers/rest/rest';
+import {NuevoticketPage} from '../pages/nuevoticket/nuevoticket';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RestProvider } from '../providers/rest/rest';
     //TicketsPage,
     ListPage,
     NosotrosPage,
-    ContactoPage
+    ContactoPage,
+    NuevoticketPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { RestProvider } from '../providers/rest/rest';
     TicketsPage,
     ListPage,
     NosotrosPage,
-    ContactoPage
+    ContactoPage,
+    NuevoticketPage
   ],
   providers: [
     StatusBar,
