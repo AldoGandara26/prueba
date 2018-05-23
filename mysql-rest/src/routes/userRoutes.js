@@ -24,7 +24,7 @@ app.get('/revisados', (req,res)=>
 
 app.get('/nuevos/:idProducto', (req,res)=>
 	{
-		console.log(req.params);
+		//console.log(req.params);
 		let idcliente=req.params.idProducto
 
 
@@ -133,7 +133,7 @@ app.get('/completos', (req,res)=>
 
 	app.post('/insert', (req, res) => 
 	{
-		console.log(req);
+		
 		const insertData=
 		{
 			id: null,
@@ -153,6 +153,25 @@ app.get('/completos', (req,res)=>
 		}
 			console.log(insertData);
 			User.b(insertData, function(err,us)
+			{
+        		//console.log("---->"+us);
+			});
+	});
+		app.post('/newuser', (req, res) => 
+	{
+		console.log(req);
+		const insertData=
+		{
+			id: null,
+			nombre_usuario:req.body.nombre,
+			pass_usuario:req.body.contrasena,
+			telefono_usuario:req.body.telefono,
+			tipo:req.body.tipo,
+			empresa_id_u:null
+			
+		}
+			console.log(insertData);
+			User.newuser(insertData, function(err,us)
 			{
         		//console.log("---->"+us);
 			});

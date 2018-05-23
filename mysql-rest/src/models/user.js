@@ -288,7 +288,29 @@ userModel.b = function (insertData,callback)
 			})
 	};
 };
-
+userModel.newuser = function (insertData,callback)
+{
+	if (connection)
+	{
+		connection.query('INSERT INTO users SET ?', insertData,
+			(err,result)=>
+			{
+				if (err)
+				{
+					console.log(err);
+					//throw err;
+					return callback(null,"error");
+				} 
+				else
+				{
+					//console.log("estamos cerca");
+					return callback(null,"correcto");
+					//callback(null,
+					//{'insertId': result.insertId})
+				}
+			})
+	};
+};
 userModel.be = function (insertData,callback)
 {
 	if (connection)

@@ -17,6 +17,7 @@ export class Provedor1Provider {
  api1="http://localhost:3000/insert";
  api2="http://localhost:3000/cambio";
  api4="http://localhost:3000/prueba";
+ api5="http://localhost:3000/newuser";
  api3="http://localhost:3000/cambiorevisado";
  apiu="http://localhost:3000/api/users/login";
   constructor(public http: HttpClient) {
@@ -112,6 +113,18 @@ cambiorevisado(datos){
 }
 post(datos){
   let consulta =this.api1;
+  let headerOptions:any={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    
+  };
+  const respuesta =this.http.post( consulta,datos,  headerOptions,);
+  return respuesta;
+}
+//metodo para el envio de nuevo usuario
+postuser(datos){
+  let consulta =this.api5;
   let headerOptions:any={
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
