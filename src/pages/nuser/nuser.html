@@ -1,0 +1,46 @@
+<ion-header >
+    <ion-navbar>
+      <ion-title >Crear nuevo usuario</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding class="getstart">
+      <ion-card class="tablogin">
+          <ion-card-header class="titletab" align="center" >
+            Escriba los datos
+          </ion-card-header>
+          <ion-card-content>
+              <ion-list>
+                  <ion-item class="nameuser">
+              <ion-label floating>Nombre de usuario</ion-label>
+              <ion-input type="text" #username  ></ion-input>
+              </ion-item>
+              <ion-item class="mail">
+                  <ion-label floating>Correo</ion-label>
+                  <ion-input type="text" #username  ></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label>Tipo de usuario</ion-label>
+                      <ion-select >
+                        <ion-option value="type1">Administrador</ion-option>
+                        <ion-option value="type2">Cliente</ion-option>
+                      </ion-select>
+                    </ion-item>
+                  <ion-item class="phone">
+                      <ion-label floating>Numero telefonico</ion-label>
+                      <ion-input type="text" #username  ></ion-input>
+                      </ion-item>
+                      <ion-item class="password1">
+                          <ion-label floating>Contraseña</ion-label>
+                          <ion-input type="password" #password  ></ion-input>
+                          </ion-item>
+              <ion-item class="password2">
+                  <ion-label floating>Rep-Contraseña</ion-label>
+                  <ion-input type="password" #password   ></ion-input>
+                  </ion-item>
+                </ion-list>
+                <div>
+                  <button ion-button (click)="send()" block class="btnnewuser">Registrar</button>
+                </div>
+          </ion-card-content>
+        </ion-card>
+  </ion-content>
