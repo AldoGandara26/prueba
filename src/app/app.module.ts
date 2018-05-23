@@ -1,3 +1,4 @@
+import { NuserPage } from './../pages/nuser/nuser';
 import { TicketsadmnPage } from './../pages/ticketsadmn/ticketsadmn';
 import { TicketsPageModule } from './../pages/tickets/tickets.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -26,7 +27,8 @@ import { RestProvider } from '../providers/rest/rest';
     //TicketsPage,
     ListPage,
     NosotrosPage,
-    ContactoPage
+    ContactoPage,
+    NuserPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { RestProvider } from '../providers/rest/rest';
     TicketsPage,
     ListPage,
     NosotrosPage,
-    ContactoPage
+    ContactoPage,
+    NuserPage
   ],
   providers: [
     StatusBar,
