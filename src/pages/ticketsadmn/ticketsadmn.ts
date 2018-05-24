@@ -51,7 +51,7 @@ export class TicketsadmnPage {
           {
             text: 'Save',
             handler: data => {
-            // console.log(obj);
+           console.log(obj);
             this.input=data.title;
             //console.log(JSON.stringify(data));
             this.objeto=obj;
@@ -165,6 +165,7 @@ completos(){
  cambio(){
     //console.log(this.objeto);
   //console.log(this.precio);
+  console.log(this.objeto);
     let datos= {"precio": this.input, "id1":this.objeto.id}
     //console.log(this.user1, this.pass);
     let resultado_registro:any=this.proveedor.cambio(datos);

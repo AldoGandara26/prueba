@@ -29,7 +29,8 @@ import {NuevoticketPage} from '../pages/nuevoticket/nuevoticket';
     ListPage,
     NosotrosPage,
     ContactoPage,
-    NuserPage
+    NuserPage,
+    NuevoticketPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +47,8 @@ import {NuevoticketPage} from '../pages/nuevoticket/nuevoticket';
     ListPage,
     NosotrosPage,
     ContactoPage,
-    NuserPage
+    NuserPage,
+    NuevoticketPage
   ],
   providers: [
     StatusBar,

@@ -37,7 +37,7 @@ revisados(idCliente)
 //get de revisados para el admin
 revisadoso()
 {
-  console.log();
+  
   return this.http.get('http://localhost:3000/revisadoso');
 
 }
