@@ -1,15 +1,21 @@
 <ion-header  (ngModel)="form1"  > 
-  
  <!--   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script> -->
   <ion-navbar id="navbar" >
-    
     <ion-item padding>
-        <button ion-button menuToggle>
-            <ion-icon name="menu" item-left> Menu</ion-icon>
-          </button>
-      <ion-icon>  </ion-icon><img src="../assets/imgs/trezg.png" width="100" height="70" id="icono" align="left" >  
-      <button ion-button [navPush]="LoginPage">Iniciar Sesion</button>
+        <ion-grid>
+            <ion-row>
+              <ion-col col-3>
+                  <button ion-button menuToggle><ion-icon name="menu" align="center"> Menu</ion-icon></button>
+              </ion-col>
+              <ion-col col-3>
+                  <img src="../assets/imgs/trezg.png" width="100" height="80" id="icono" item-right > 
+              </ion-col>
+              <ion-col col-3>
+                  <button ion-button [navPush]="LoginPage" align="right">Iniciar Sesion</button>
+                </ion-col>
+            </ion-row>
+          </ion-grid>
     </ion-item>
   </ion-navbar>
 </ion-header>
@@ -32,20 +38,15 @@
         </p> --></form>
       </ion-slide> <!--
       <ion-slide id="slide1" >
-        
        <img src="../assets/imgs/trez2.png" >
        <form >
        <h1>Trez</h1>
         <p> soporte@trez.com.mx <br>
           (677)1053166 <br>
           facebook: Trez Software
-         
-
         </p></form>
       </ion-slide>
-     
       <ion-slide id="slide1">
-         
        <img src="../assets/imgs/la1.jpg" >
        <form >
        <h1>Trez</h1>
@@ -53,13 +54,8 @@
         </p></form>
       </ion-slide> -->
   <!--  </div> -->
-    
     </ion-slides>
-
   <!--  <h3> datos desde api</h3>
     <button ion-item *ngFor="let contact  of contactos"> {{contact.id}}-{{contact.username}}</button>
   -->
   </ion-content>
-  
-
- 
