@@ -72,7 +72,7 @@ userModel.revision =function (callback)
 				 {
 					throw err;
 				} else {
-					console.log(rows);
+					//console.log(rows);
 					
 					return callback(null, rows);
 				}})	
@@ -113,12 +113,13 @@ userModel.revision =function (callback)
 				}})	
 			}	
 	};
-	userModel.aceptados =function (callback)
-	{		
+	userModel.aceptados =function (idCliente, callback)
+	{	
+	console.log(idCliente);	
 		if (connection)
 			{
 				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
-				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='aceptado'",
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='aceptado' And usuario_id='"+idCliente+"'; ",
 				(err, rows) =>
 				{
 				if (err)
@@ -130,12 +131,13 @@ userModel.revision =function (callback)
 				}})	
 			}	
 	};
-	userModel.c =function (callback)
+	//select de completos para el cliente
+	userModel.c =function (idCliente, callback)
 	{		
 		if (connection)
 			{
 				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
-				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='terminado'",
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='terminado' AND usuario_id='"+idCliente+"'; ",
 				(err, rows) =>
 				{
 				if (err)
@@ -147,6 +149,43 @@ userModel.revision =function (callback)
 				}})	
 			}	
 	};
+	//select de completos para el administrador
+	userModel.completost =function ( callback)
+	{		
+		if (connection)
+			{
+				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='terminado' ",
+				(err, rows) =>
+				{
+				if (err)
+				 {
+					throw err;
+				} else {
+					
+					return callback(null, rows);
+				}})	
+			}	
+	};
+		userModel.revisadoso =function ( callback)
+	{		
+		if (connection)
+			{
+				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='aceptado' ",
+				(err, rows) =>
+				{
+				if (err)
+				 {
+					throw err;
+				} else {
+					
+					return callback(null, rows);
+				}})	
+			}	
+	};
+
+
 	//funcion para el login
 userModel.login = function (userData,callback)
 {

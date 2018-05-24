@@ -13,10 +13,16 @@ module.exports=function (app)
 	});
 
 
-app.get('/revisados', (req,res)=>
+app.get('/revisados/:idCliente', (req,res)=>
 	{
-		User.aceptados((err, data)=>
+		//console.log(req.params);
+		let idCliente=req.params.idCliente
+
+
+		
+		User.aceptados( idCliente, function (err, data)
 		{
+			
 			res.status(200).json(data);
 
 		});
@@ -55,15 +61,34 @@ app.get('/nuevospred', (req,res)=>
 		});
 	});
 
-app.get('/completos', (req,res)=>
+app.get('/completos/:idCliente', (req,res)=>
 	{
-	
-		User.c((err, data)=>
+	let idCliente=req.params.idCliente
+		User.c(idCliente, function (err, data)
 		{
 			res.status(200).json(data);
 
 		});
 	});
+app.get('/completost', (req,res)=>
+	{
+		
+		User.completost((err, data)=>
+		{
+			res.status(200).json(data);
+
+		});
+	});
+app.get('/revisadoso', (req,res)=>
+	{
+		//se invoca el metodo para el select de predef para admin
+		User.revisadoso((err, data)=>
+		{
+			res.status(200).json(data);
+
+		});
+	});
+
 
 
 

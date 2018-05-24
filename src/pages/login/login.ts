@@ -41,8 +41,8 @@ else{
   }
   else{
     if(data.respuesta=="correcto"){
-      console.log(data.respuesta);
-      alert("usuario y contrasena corectos");
+      
+      alert("usuario y contraseña correctos");
     this.navCtrl.setRoot(TicketsadmnPage );}
     else{
       if(data.respuesta=="correcto1")
@@ -50,7 +50,7 @@ else{
         
          this.id= data.aldo;
     
-      alert("usuario y contrasena corectos");
+      alert("usuario y contraseña corectos");
       this.navCtrl.push(TicketsPage,
          { 'idProduct': this.id}  );
          

@@ -101,7 +101,7 @@ export class TicketsadmnPage {
        
      }
     en_revision(){
-      this.proveedor.revisados()
+      this.proveedor.revisadoso()
       .subscribe(
         (data)=>{
           console.log(data);

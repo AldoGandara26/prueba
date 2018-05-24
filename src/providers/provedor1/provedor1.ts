@@ -27,9 +27,19 @@ obtenerDatos()
 {
   return this.http.get('http://localhost:3000/users');
 }
-revisados()
+//get para tickets con estatus revisados
+revisados(idCliente)
 {
-  return this.http.get('http://localhost:3000/revisados');
+  console.log(idCliente);
+  return this.http.get('http://localhost:3000/revisados/'+idCliente);
+
+}
+//get de revisados para el admin
+revisadoso()
+{
+  console.log();
+  return this.http.get('http://localhost:3000/revisadoso');
+
 }
 nuevost()
 {
@@ -42,11 +52,11 @@ nuevos(idProducto)
 }
 completost()
 {
-  return this.http.get('http://localhost:3000/completos');
+  return this.http.get('http://localhost:3000/completost');
 }
-completos()
+completos(idCliente)
 {
-  return this.http.get('http://localhost:3000/completos');
+  return this.http.get('http://localhost:3000/completos/'+idCliente);
 }
 nuevoso()
 {
@@ -76,7 +86,7 @@ enviaid(datos){
 }
 enviardatos(datos){
   let consulta =this.api;
-  console.log(datos);
+ 
   let headerOptions:any={
     headers: new HttpHeaders({
       'Content-Type': 'application/json'

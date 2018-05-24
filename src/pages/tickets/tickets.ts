@@ -39,7 +39,7 @@ export class TicketsPage {
   (error)=>{console.log(error); }
 )}
 revisados(){
-  this.proveedor.revisados()
+  this.proveedor.revisados(this.idCliente)
   .subscribe(
     (data)=>{
       console.log(data);
@@ -63,7 +63,7 @@ revisados(){
 
 }
 completos(){
-  this.proveedor.completos()
+  this.proveedor.completos(this.idCliente)
   .subscribe(
     (data)=>{
       console.log(data);
