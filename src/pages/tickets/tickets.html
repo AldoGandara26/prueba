@@ -20,7 +20,8 @@
       <ion-segment [(ngModel)]="Tickets">
         <ion-segment-button value="new" (click)="nuevos()" >Nuevos</ion-segment-button>
         <ion-segment-button value="wait">En Revision</ion-segment-button>
-        <ion-segment-button value="Reviewed"  (click)="revisados()">Revisados</ion-segment-button>
+        <ion-segment-button value="Reviewed"  (click)="revisados">Revisados</ion-segment-button>
+        <ion-segment-button value="Reviewdef"  (click)="revisados()">Revisados "Def"</ion-segment-button>
         <ion-segment-button value="finish" (click)="completos()">Completos</ion-segment-button>
       </ion-segment>
     </ion-toolbar>
@@ -82,6 +83,29 @@
                       <h2>Estatus:{{rev.estatus_ticket}}</h2>
                       <button ion-button color="secondary" block (click)="doPrompt2(aldo)">Aceptar costo </button>
                      </ion-item>
+                  </ion-card>
+            </ion-item>
+          </ion-list>
+          <ion-list *ngSwitchCase="'Reviewdef'">
+            <ion-item>
+                <ion-card>
+                    <ion-card-header >
+                      Tickets aceptados
+                    </ion-card-header>
+                    <ion-card-content>
+                      informacion del nuevo ticket
+                    <!-- *ngFor="let datoshtml  of datos" -->
+                    <!-- {{datoshtml.descripcion_ticket}}  -->
+                    </ion-card-content >
+                    <ion-item *ngFor="let newdata  of datos_revisados">  
+                      <h2 >Nombre: {{newdata.nombre_ticket}} </h2> 
+                    <h2>Descripcion:{{newdata.descripcion_ticket}}</h2>
+                    <h2>Estatus:{{newdata.estatus_ticket}}</h2>
+                   </ion-item>
+                    
+                    <ion-list   >
+                     
+                   </ion-list>
                   </ion-card>
             </ion-item>
           </ion-list>

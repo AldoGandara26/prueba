@@ -205,12 +205,13 @@ app.get('/revisadoso', (req,res)=>
 	app.post('/cambio', (req, res) => 
 	{
 
+
 		const updatedData=
 		{
 			
 			precio:req.body.precio,
 			
-			estatus:"aceptado",
+			estatus:"en proceso",
 			id1:req.body.id1
 		}
 			//console.log(insertData);
@@ -270,6 +271,22 @@ app.get('/revisadoso', (req,res)=>
 			User.be(insertData, function(err,us)
 			{
         		//console.log("---->"+us);
+			});
+	});
+		app.post('/cambioo', (req, res) => 
+	{
+		const updatedData2=
+		{
+			
+			precio:req.body.precio,
+			
+			estatus:"por aceptar",
+			id1:req.body.id1
+		}
+			//console.log(insertData);
+			User.cambiop(updatedData2, function(err,us)
+			{
+        		console.log("----25>"+us);
 			});
 	});
 

@@ -28,6 +28,10 @@ export class TicketsadmnPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad TicketsPage');
   }
+
+    
+
+
  
     doPrompt(obj) {
      // console.log(obj);
@@ -64,6 +68,42 @@ export class TicketsadmnPage {
       prompt.present();
       
     }
+    doPrompt3(object) {
+      // console.log(obj);
+         let prompt = this.alertCtrl.create({
+         title: 'Login',
+         message: "Enter a name for this new album you're so keen on adding",
+         inputs: [
+           {
+             name: 'title',
+             placeholder: 'Title',
+            
+                     },
+         ],
+         buttons: [
+           {
+             text: 'Cancel',
+             handler: data => {
+               console.log('Cancel clicked');
+             }
+           },
+           {
+             text: 'Save',
+             handler: data => {
+             // console.log(obj);
+             this.input2=data.title;
+            // console.log(JSON.stringify(data));
+            this.objeto2=object;
+               this.cambiop();
+               console.log('Saved clicked');
+             
+             }
+           }
+         ]
+       });
+       prompt.present();
+       
+     }
     doPrompt2(object) {
       // console.log(obj);
          let prompt = this.alertCtrl.create({
@@ -147,6 +187,24 @@ nuevoso(){
 )
 
 } 
+cambiop(){
+  //console.log(this.objeto);
+//console.log(this.precio);
+
+  let datos= {"precio": this.input2, "id1":this.objeto2.id}
+  //console.log(this.user1, this.pass);
+  let resultado_registro:any=this.proveedor.cambiop(datos);
+ resultado_registro.subscribe(data=>{
+   
+ // console.log(data);
+ // alert("Sus ticket se ha enviado a TREZ");
+  //this.navCtrl.setRoot(HomePage)
+
+
+}, error =>{
+  console.log("ooops");
+});
+}
 completos(){
   this.proveedor.completost()
   .subscribe(
@@ -200,6 +258,9 @@ completos(){
   });
 
   }
+
+
+  
   }
 
     

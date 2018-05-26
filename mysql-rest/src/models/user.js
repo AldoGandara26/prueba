@@ -119,7 +119,7 @@ userModel.revision =function (callback)
 		if (connection)
 			{
 				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
-				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='aceptado' And usuario_id='"+idCliente+"'; ",
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en proceso' And usuario_id='"+idCliente+"'; ",
 				(err, rows) =>
 				{
 				if (err)
@@ -172,7 +172,7 @@ userModel.revision =function (callback)
 		if (connection)
 			{
 				//SELECT * FROM tickets ORDER BY id  SELECT * FROM tickets WHERE estatus_ticket = '"+en revision+"'; 
-				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='aceptado' ",
+				connection.query("SELECT * FROM tickets WHERE estatus_ticket ='en proceso' ",
 				(err, rows) =>
 				{
 				if (err)
@@ -386,7 +386,8 @@ userModel.cambiop = function (updatedData,callback)
 	console.log(updatedData);
 	if (connection)
 	{
-			connection.query("UPDATE tickets SET  precio='"+updatedData.precio+"', estatus_ticket='"+updatedData.estatus+"' WHERE id='"+updatedData.id1+"';",
+		//
+			connection.query("UPDATE tickets SET   estatus_ticket='"+updatedData.estatus+"' WHERE id='"+updatedData.id1+"'; ",
 			(err,result)=>
 			{
 				if (err)
@@ -429,6 +430,32 @@ userModel.cambior = function (updatedData2,callback)
 			})
 	};
 };
+
+userModel.cambiop = function (updatedData2,callback)
+{
+	console.log(updatedData2);
+	if (connection)
+	{
+			connection.query("UPDATE tickets SET  precio='"+updatedData2.precio+"', estatus_ticket='"+updatedData2.estatus+"' WHERE id='"+updatedData2.id1+"';",
+			(err,result)=>
+			{
+				if (err)
+				{
+					console.log(err);
+					//throw err;
+					return callback(null,"error");
+				} 
+				else
+				{
+					//console.log("estamos cerca");
+					return callback(null,"correcto");
+					//callback(null,
+					//{'insertId': result.insertId})
+				}
+			})
+	};
+};
+
 
 
 module.exports = userModel;
