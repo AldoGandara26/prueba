@@ -20,7 +20,7 @@
       <ion-segment [(ngModel)]="Tickets">
         <ion-segment-button value="new" (click)="nuevos()" >Nuevos</ion-segment-button>
         <ion-segment-button value="wait">En Revision</ion-segment-button>
-        <ion-segment-button value="Reviewed"  (click)="revisados">Revisados</ion-segment-button>
+        <ion-segment-button value="Reviewed"  (click)="revisadosc()">Revisados</ion-segment-button>
         <ion-segment-button value="Reviewdef"  (click)="revisados()">Revisados "Def"</ion-segment-button>
         <ion-segment-button value="finish" (click)="completos()">Completos</ion-segment-button>
       </ion-segment>
@@ -44,7 +44,7 @@
                 <h2>Estatus:{{newdata.estatus_ticket}}</h2>
                </ion-item>
                 
-                <ion-list   >
+                <ion-list>
                  
                </ion-list>
               </ion-card>
@@ -81,7 +81,7 @@
                         <h2 >Nombre: {{rev.nombre_ticket}} </h2> 
                       <h2>Descripcion:{{rev.descripcion_ticket}}</h2>
                       <h2>Estatus:{{rev.estatus_ticket}}</h2>
-                      <button ion-button color="secondary" block (click)="doPrompt2(aldo)">Aceptar costo </button>
+                      <button ion-button color="secondary" block (click)="doPrompt2(rev)">Aceptar costo </button>
                      </ion-item>
                   </ion-card>
             </ion-item>

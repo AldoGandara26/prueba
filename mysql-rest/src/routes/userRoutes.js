@@ -88,8 +88,17 @@ app.get('/revisadoso', (req,res)=>
 
 		});
 	});
+// funcion para pestana de revisados en el cliente
+app.get('/revisadosc/:idCliente', (req,res)=>
+	{
 
+	let idCliente=req.params.idCliente
+		User.revisadosc(idCliente, function (err, data)
+		{
+			res.status(200).json(data);
 
+		});
+	});
 
 
 
@@ -169,8 +178,8 @@ app.get('/revisadoso', (req,res)=>
 			file:req.body.file,
 			comentario_id:req.body.comentario,
 			file2:req.body.file2,
-			created_at_ticket:null,
-			updated_at_ticket:null,
+			created_at:null,
+			updated_at:null,
 			proyecto_id:null,
 			usuario_id:req.body.id_cliente,
 			estatus_ticket:"en revison",
@@ -233,6 +242,23 @@ app.get('/revisadoso', (req,res)=>
 		}
 			//console.log(insertData);
 			User.cambior(updatedData2, function(err,us)
+			{
+        		console.log("----25>"+us);
+			});
+	});
+	//ruta donde el cliente acepta el costo y le cambia el estatus a el cliente
+	app.post('/cambiocliente', (req, res) => 
+	{
+		const updatedData2=
+		{
+			
+			comentario:req.body.comentario,
+			
+			estatus:"en proceso",
+			id1:req.body.id1
+		}
+			//console.log(insertData);
+			User.cambiocliente(updatedData2, function(err,us)
 			{
         		console.log("----25>"+us);
 			});

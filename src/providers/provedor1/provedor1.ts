@@ -13,12 +13,14 @@ import { HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class Provedor1Provider {
  // private url = 'http//localhost:8000/users';
+ //declaracion de las rutas para su uso dentro de los metodos que utilizan post
  api="http://localhost:3000/users";
  api1="http://localhost:3000/insert";
  api2="http://localhost:3000/cambio";
  api4="http://localhost:3000/prueba";
  api5="http://localhost:3000/newuser";
  api6="http://localhost:3000/cambioo";
+ api7="http://localhost:3000/cambiocliente";
  api3="http://localhost:3000/cambiorevisado";
  apiu="http://localhost:3000/api/users/login";
   constructor(public http: HttpClient) {
@@ -31,8 +33,14 @@ obtenerDatos()
 //get para tickets con estatus revisados
 revisados(idCliente)
 {
-  console.log(idCliente);
+  //console.log(idCliente);
   return this.http.get('http://localhost:3000/revisados/'+idCliente);
+
+}
+revisadosc(idCliente)
+{
+  //console.log(idCliente);
+  return this.http.get('http://localhost:3000/revisadosc/'+idCliente);
 
 }
 //get de revisados para el admin
@@ -111,6 +119,17 @@ cambio(datos1){
 }
 cambiop(datos){
   let consulta =this.api6;
+  let headerOptions:any={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    
+  };
+  const respuesta =this.http.post( consulta,datos,  headerOptions,);
+  return respuesta;
+}
+cambiocliente(datos){
+  let consulta =this.api7;
   let headerOptions:any={
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
