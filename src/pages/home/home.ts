@@ -65,14 +65,15 @@ Slider=[{
   description:'Desarrollamos aplicaciones adaptadas a las necesidades de  nuestros clientes.'
 },
 {
-  image:'../assets/imgs/trez2.png',
-  title:'Trez',
-  description:'soporte@trez.com.mx (677)1053166 facebook: Trez Software'
-},
-{
   image:'../assets/imgs/la1.jpg',
   title:'Trez',
-  description:'Paginas web y mas '
+  description:'Desarrollamos mas que solo aplicaciones, Hacemos tus ideas realidad'
+},
+{
+  image:'../assets/imgs/trez2.png',
+  title:'Contactanos!!',
+  description:'soporte@trez.com.mx (677)1053166 facebook: Trez Software'
+  
 }];
   monve() {
     alert ("esta funcionando"); 
