@@ -218,7 +218,7 @@ app.get('/revisadosc/:idCliente', (req,res)=>
 		const updatedData=
 		{
 			
-			precio:req.body.precio,
+			comentario_id:req.body.precio,
 			
 			estatus:"en proceso",
 			id1:req.body.id1

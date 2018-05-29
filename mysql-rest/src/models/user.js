@@ -478,7 +478,7 @@ userModel.cambiop = function (updatedData2,callback)
 	console.log(updatedData2);
 	if (connection)
 	{
-			connection.query("UPDATE tickets SET  precio='"+updatedData2.precio+"', estatus_ticket='"+updatedData2.estatus+"' WHERE id='"+updatedData2.id1+"';",
+			connection.query("UPDATE tickets SET  comentario_id='"+updatedData2.comentario_id+"', estatus_ticket='"+updatedData2.estatus+"' WHERE id='"+updatedData2.id1+"';",
 			(err,result)=>
 			{
 				if (err)
