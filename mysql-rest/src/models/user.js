@@ -232,25 +232,25 @@ userModel.login = function (userData,callback)
 						}
 						else
 						{
-							console.log(rows[0].pass_usuario);
-							console.log();
+							
 							hash=rows[0].pass_usuario;
 
 							bcrypt.compare( userData.pass,   hash, function(err, result){
-								console.log(result);
+								
 								if(result)
 									{
+										
 										if(rows[0].tipo=="1"){
 											const aldo=rows[0].Id;
-								//console.log(aldo);
-									return callback(null,"correcto1",aldo);
+								console.log("1");
+									return callback(null,"correcto1",aldo); 	
 								}
 									}
 									else{
 										if (rows[0].tipo=="0"){
 											const aldo=rows[0].Id;
-								//console.log(aldo);
-
+								
+											console.log("0");
 									return callback(null,"correcto",aldo);
 
 										}
