@@ -1,6 +1,9 @@
 const User = require('../models/user');
 
-
+var bcrypt = require('bcrypt');
+const saltRounds = 10;
+const myPlaintextPassword = 's0/\/\P4$$w0rD';
+const someOtherPlaintextPassword = 'not_bacon';
 module.exports=function (app)
 {
 	app.get('/users', (req,res)=>
@@ -193,24 +196,38 @@ app.get('/revisadosc/:idCliente', (req,res)=>
 	});
 		app.post('/newuser', (req, res) => 
 	{
-		console.log(req);
-		const insertData=
+		//console.log(req);
+
+		bcrypt.genSalt(saltRounds, function(err, salt) {
+    		bcrypt.hash(req.body.contrasena, salt, function(err, hash) {
+    		console.log(hash);
+    			const insertData=
 		{
 			id: null,
 			nombre_usuario:req.body.nombre,
-			pass_usuario:req.body.contrasena,
+			pass_usuario:hash,
 			telefono_usuario:req.body.telefono,
 			tipo:req.body.tipo,
 			empresa_id_u:null
 			
 		}
-			console.log(insertData);
+        // Store hash in your password DB.
+		console.log(insertData);
 			User.newuser(insertData, function(err,us)
 			{
         		//console.log("---->"+us);
 			});
 	});
 
+        
+    });
+});
+
+
+
+
+	
+	
 	app.post('/cambio', (req, res) => 
 	{
 
