@@ -5,10 +5,10 @@
           <ion-col>
             <button ion-button menuToggle><ion-icon name="menu" align="center"> Menu</ion-icon></button>    
           </ion-col>
-          <ion-col>
+          <ion-col align='center'>
             <img src="../assets/imgs/trezg.png" width="100" height="80" id="icono" item-right >
           </ion-col>
-          <ion-col>
+          <ion-col align='right'>
             <button ion-button [navPush]="LoginPage" align="right">Iniciar Sesion</button>
           </ion-col>
         </ion-row>
@@ -55,3 +55,27 @@
     <button ion-item *ngFor="let contact  of contactos"> {{contact.id}}-{{contact.username}}</button>
   -->
   </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title align='center'>Contactanos</ion-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col align='center'>
+              <a button href="tel:+526771053166" clear >
+                  <ion-icon name="call"></ion-icon>
+                </a>
+          </ion-col>
+          <ion-col align='center'>
+              <a button href="mailto:soporte@trez.com.mx" clear>
+                  <ion-icon name="mail"></ion-icon>
+                </a>
+          </ion-col>
+          <ion-col align='center'>
+              <a button href="fb:https://www.facebook.com/trezsoftware/ " clear>
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-footer >

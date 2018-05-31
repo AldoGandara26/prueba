@@ -1,3 +1,4 @@
+import { ServicesPage } from './../pages/Services/services';
 import { NuserPage } from './../pages/nuser/nuser';
 import { TicketsadmnPage } from './../pages/ticketsadmn/ticketsadmn';
 import { TicketsPageModule } from './../pages/tickets/tickets.module';
@@ -9,7 +10,6 @@ import { HomePage } from '../pages/home/home';
 import { NosotrosPage } from '../pages/nosotros/nosotros';
 import { TicketsPage } from '../pages/tickets/tickets';
 import { ContactoPage } from '../pages/contacto/contacto';
-import { ListPage } from '../pages/list/list';
 //import { AgmCoreModule } from 'angular2-google-maps/core';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,8 +26,8 @@ import {NuevoticketPage} from '../pages/nuevoticket/nuevoticket';
     MyApp,
     HomePage,
     //TicketsPage,
-    ListPage,
     NosotrosPage,
+    ServicesPage,
     ContactoPage,
     NuserPage,
     NuevoticketPage
@@ -44,7 +44,7 @@ import {NuevoticketPage} from '../pages/nuevoticket/nuevoticket';
     MyApp,
     HomePage,
     TicketsPage,
-    ListPage,
+    ServicesPage,
     NosotrosPage,
     ContactoPage,
     NuserPage,

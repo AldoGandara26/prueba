@@ -70,9 +70,9 @@ Slider=[{
   description:'Desarrollamos mas que solo aplicaciones, Hacemos tus ideas realidad'
 },
 {
-  image:'../assets/imgs/trez2.png',
-  title:'Contactanos!!',
-  description:'soporte@trez.com.mx (677)1053166 facebook: Trez Software'
+  image:'../assets/imgs/w1.jpg',
+  title:'Tecnologias',
+  description:''
   
 }];
   monve() {
